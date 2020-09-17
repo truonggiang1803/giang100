@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="70d9a87f6dc84ffdaf841f967063df81" Name="Diagram1">
+        <EntityTypeShape EntityType="QL_LAZADAModel2.ADMIN" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.CT_HOADON" Width="1.5" PointX="7.5" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.HOADON" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.KHACHHANG" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.KHUVUC" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.LOAIHANG" Width="1.5" PointX="6" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSdynamicsnapshotview" Width="1.5" PointX="10.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSmerge_dynamic_snapshots" Width="1.5" PointX="12" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSmerge_partition_groups" Width="1.5" PointX="9.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.NHACUNGCAP" Width="1.5" PointX="6" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.SANPHAM" Width="1.5" PointX="8.25" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.sysdiagram" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.TK_KHACHHANG" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.TK_NCC" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSdynamicsnapshotjob" Width="1.5" PointX="10.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSmerge_agent_parameters" Width="1.5" PointX="2.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSmerge_altsyncpartners" Width="1.5" PointX="4.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSmerge_articlehistory" Width="1.5" PointX="6.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSmerge_conflict_MIENBAC_ADMIN" Width="1.5" PointX="8.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSmerge_conflict_MIENBAC_CT_HOADON" Width="1.5" PointX="10.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSmerge_conflict_MIENBAC_HOADON" Width="1.5" PointX="12.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSmerge_conflict_MIENBAC_KHACHHANG" Width="1.5" PointX="12.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSmerge_conflict_MIENBAC_KHUVUC" Width="1.5" PointX="12.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSmerge_conflict_MIENBAC_LOAIHANG" Width="1.5" PointX="14.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSmerge_conflict_MIENBAC_NHACUNGCAP" Width="1.5" PointX="0.75" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSmerge_conflict_MIENBAC_SANPHAM" Width="1.5" PointX="2.75" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSmerge_conflict_MIENBAC_sysdiagrams" Width="1.5" PointX="14.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSmerge_conflict_MIENBAC_TK_KHACHHANG" Width="1.5" PointX="14.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSmerge_conflict_MIENBAC_TK_NCC" Width="1.5" PointX="14.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSmerge_conflicts_info" Width="1.5" PointX="12.75" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSmerge_contents" Width="1.5" PointX="14.75" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSmerge_current_partition_mappings" Width="1.5" PointX="8.75" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSmerge_errorlineage" Width="1.5" PointX="16.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSmerge_generation_partition_mappings" Width="1.5" PointX="16.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSmerge_genhistory" Width="1.5" PointX="4.75" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSmerge_history" Width="1.5" PointX="16.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSmerge_identity_range" Width="1.5" PointX="16.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSmerge_log_files" Width="1.5" PointX="16.75" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSmerge_metadataaction_request" Width="1.5" PointX="18.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSmerge_past_partition_mappings" Width="1.5" PointX="18.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSmerge_replinfo" Width="1.5" PointX="18.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSmerge_sessions" Width="1.5" PointX="6.75" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSmerge_settingshistory" Width="1.5" PointX="8.75" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSmerge_supportability_settings" Width="1.5" PointX="18.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSmerge_tombstone" Width="1.5" PointX="10.75" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSrepl_errors" Width="1.5" PointX="12.75" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.MSsnapshotdeliveryprogress" Width="1.5" PointX="14.75" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.sysmergearticle" Width="1.5" PointX="18.75" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.sysmergepartitioninfo" Width="1.5" PointX="0.75" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.sysmergepublication" Width="1.5" PointX="20.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.sysmergeschemaarticle" Width="1.5" PointX="2.75" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.sysmergeschemachange" Width="1.5" PointX="20.75" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.sysmergesubscription" Width="1.5" PointX="20.75" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_LAZADAModel2.sysmergesubsetfilter" Width="1.5" PointX="14.75" PointY="22.25" IsExpanded="true" />
+        <AssociationConnector Association="QL_LAZADAModel2.FK_CT_HOADON_HOADON" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_LAZADAModel2.FK_CT_HOADON_SANPHAM" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_LAZADAModel2.FK_HOADON_KHACHHANG" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_LAZADAModel2.FK_KHACHHANG_KHUVUC" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_LAZADAModel2.FK_KHACHHANG_TK_KHACHHANG" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_LAZADAModel2.FK_NHACUNGCAP_KHUVUC" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_LAZADAModel2.FK_SANPHAM_LOAIHANG" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_LAZADAModel2.FK__MSmerge_d__parti__2739D489" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_LAZADAModel2.FK_NHACUNGCAP_TK_NCC" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_LAZADAModel2.FK_SANPHAM_NHACUNGCAP" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

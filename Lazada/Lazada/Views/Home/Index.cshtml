@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/Content/jquery_321/jquery-3.2.1.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+
+    <div class="form-row">
+        @foreach (var item in Model)
+        {
+        <div class="col-lg-3 text-lg-center" >
+
+            <div>
+                <div class="view overlay"> <a href="~/Home/CTSANPHAM/?masp=@item.MASP" style=" text-decoration:none"><img class="" src="~/Content/HinhAnh/@item.ANH" width=200px height=150px /></a></div>
+            </div>
+            <div>
+                <p style="font-size:1.5em;"><c style="text-transform:lowercase">@item.TENSP</c></p>
+            </div>
+            <div>
+                <p style="font-size:1.2em;color:#ff6a00">đ: @item.DONGIA VND</p>
+            </div>
+        </div>
+        }
+            @*<div style="height:230px">
+                <img id="hinh" src="~/Content/HinhAnh/@item.HINHANH" width=200px height=200px title="@item.TENSP" style="" /><br />
+            </div>
+            <div style="height:30px">
+                <p style="font-size:1.0em">Tên: <c style="text-transform:lowercase">@item.TENSP</c></p>
+            </div>
+            <div style="height:30px;">
+                <p style="font-size:1.2em"><b style="color:#4ccfc1">Đơn giá</b>: @item.DONGIA VND</p>
+            </div>
+            <div style="height:30px;">
+                <div class="nut">
+                    <a href="~/SanPham/CTSanPham/@item.MASP" style="text-decoration:none; color:#ffffff"><img src="~/Content/HinhAnh/chitiet.png" width=50px height=50px /></a>
+                    <a href="@Url.Action("ThemGioHang", "GioHang", new { @ma = @item.MASP,@strURL=Request.Url.ToString()})" style="text-decoration:none; color:#ffffff"><img src="~/Content/HinhAnh/themgiohang.png" width=50px height=50px /></a>
+                </div>
+            </div>*@
+
+
+        
+    </div>
+
+    <div class="slideshow-container">
+        @*@Html.Action("SliderSanPham", "Home")*@
+    </div>
+
+    <br>
+    <div class="row">
+        <div class="col-lg-2">
+            @*@Html.Action("DanhMucLoai", "Home")
+                @Html.Action("DanhMucTuoi", "Home")*@
+        </div>
+        <div class="col-lg-9">
+            @*@RenderBody()*@
+        </div>
+
+    </div>
+
+</body>
+</html>

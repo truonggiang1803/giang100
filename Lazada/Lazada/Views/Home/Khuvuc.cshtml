@@ -1,0 +1,18 @@
+﻿@using Lazada.Models;
+<link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+<div class="menu">
+    <ul>
+        <li>
+            <a class="#" style="font-size:1.5em">Categories <img src="https://img.icons8.com/carbon-copy/100/000000/drag-list-down.png" width="20" height="20" /></a>
+            <ul class="sub-menu">
+                @foreach (var item in Model)
+                {
+                    <li> <a href="#">@item.TENKV</a></li>
+
+                    //<li class="nav-item" style="border-bottom:1px solid #0ff"><a class="nav-link" href="~/SanPham/SanPhamTH/@item.MALOAI" style="color:#4ccfc1; font-size:1.2em">@item.TENLOAI</a></li>
+                }
+            </ul>
+        </li>
+    </ul>
+
+</div>

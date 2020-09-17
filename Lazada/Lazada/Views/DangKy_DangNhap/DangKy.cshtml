@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <html>
+    <head>
+        <meta name="viewport1" content="width=device-width" />
+        <link href="~/Content/Site.css" rel="stylesheet" />
+        <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+        <script src="~/Content/jquery_321/jquery-3.2.1.min.js"></script>
+        <script src="https://unpkg.com/popper.js"></script>
+        <script src="~/Content/js/bootstrap.min.js"></script>
+        <meta name="viewport1" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h4>@ViewBag.Loi1</h4>
+        <h4>@ViewBag.Loi2</h4>
+        <h4>@ViewBag.Loi3</h4>
+        <h4>@ViewBag.Loi4</h4>
+        <h4>@ViewBag.Loi5</h4>
+        <h4>@ViewBag.Loi6</h4>
+        <h4>@ViewBag.Loi7</h4>
+        <h4>@ViewBag.Loi8</h4>
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+            <div class="container">
+                <div class="login-form">
+                    <form action="" method="post">
+                        <h1>Đăng ký tài khoản</h1>
+                        <div class="input-box">
+                            <i></i>
+                            <input type="text" placeholder="Nhập username" name="TENTK">
+                        </div>
+                        <div class="input-box">
+                            <i></i>
+                            <input type="password" placeholder="Nhập password" name="MATKHAU">
+                        </div>
+                        <div class="input-box">
+                            <i></i>
+                            <input type="password" placeholder="Nhập lại password" name="XACNHANMATKHAU">
+                        </div>
+                        <div class="input-box">
+                            <i></i>
+                            <input type="text" placeholder="Nhập mã khu vực" name="MAKV">
+                        </div>
+                        <div class="input-box">
+                            <i></i>
+                            <input type="text" placeholder="Nhập họ tên" name="HOTEN">
+                        </div>
+                        <div class="input-box">
+                            <i></i>
+                            <input type="text" placeholder="Nhập địa chỉ" name="DIACHI">
+                        </div>
+                        <div class="input-box">
+                            <i></i>
+                            <input type="text" placeholder="Nhập số điện thoại" name="SDT">
+                        </div>
+                        <div class="input-box">
+                            <i></i>
+                            <input type="text" placeholder="Nhập email" name="EMAIL">
+                        </div>
+                        <div class="btn-box">
+                            <button type="submit">
+                                Đăng ký
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+        }
+    </body>
+    </html>
+

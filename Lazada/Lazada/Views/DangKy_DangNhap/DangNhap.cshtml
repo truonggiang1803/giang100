@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "DangNhap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <html>
+    <head>
+        <meta name="viewport1" content="width=device-width" />
+        <link href="~/Content/Site.css" rel="stylesheet" />
+        <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+        <script src="~/Content/jquery_321/jquery-3.2.1.min.js"></script>
+        <script src="https://unpkg.com/popper.js"></script>
+        <script src="~/Content/js/bootstrap.min.js"></script>
+        <meta name="viewport1" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h4>@ViewBag.Thongbao</h4>
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+            <div class="container">
+                <div class="login-form">
+                    <form action="" method="post">
+                        <h1>Đăng nhập vào website</h1>
+                        <div class="input-box">
+                            <i></i>
+                            <input type="text" placeholder="Nhập username" name="TENTK">
+                        </div>
+                        <div class="input-box">
+                            <i></i>
+                            <input type="password" placeholder="Nhập mật khẩu" name="MATKHAU">
+                        </div>
+                        <div class="btn-box">
+                            <button type="submit">
+                                Đăng nhập
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        }
+    </body>
+    </html>
+

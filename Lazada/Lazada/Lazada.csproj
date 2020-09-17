@@ -1,0 +1,720 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2FBC0E64-56E9-46E6-823F-137DBC0DD4CD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lazada</RootNamespace>
+    <AssemblyName>Lazada</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44381</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DangKy_DangNhapController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ADMIN.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CT_HOADON.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBMienBac.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBMienBac.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBMienBac.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBMienBac.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBMienBac.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBMienNam.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBMienNam.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBMienNam.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBMienNam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBMienNam.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBMienNam.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBMienTrung.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBMienTrung.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBMienTrung.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBMienTrung.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBMienTrung.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBMienTrung.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HOADON.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KHACHHANG.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KHUVUC.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LOAIHANG.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSdynamicsnapshotjob.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSdynamicsnapshotview.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_agent_parameters.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_altsyncpartners.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_articlehistory.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflicts_info.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflict_MIENBAC_ADMIN.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflict_MIENBAC_CT_HOADON.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflict_MIENBAC_HOADON.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflict_MIENBAC_KHACHHANG.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflict_MIENBAC_KHUVUC.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflict_MIENBAC_LOAIHANG.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflict_MIENBAC_NHACUNGCAP.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflict_MIENBAC_SANPHAM.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflict_MIENBAC_sysdiagrams.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflict_MIENBAC_TK_KHACHHANG.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflict_MIENBAC_TK_NCC.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflict_MIENNAM_ADMIN.cs">
+      <DependentUpon>DBMienNam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflict_MIENNAM_CT_HOADON.cs">
+      <DependentUpon>DBMienNam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflict_MIENNAM_HOADON.cs">
+      <DependentUpon>DBMienNam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflict_MIENNAM_KHACHHANG.cs">
+      <DependentUpon>DBMienNam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflict_MIENNAM_KHUVUC.cs">
+      <DependentUpon>DBMienNam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflict_MIENNAM_LOAIHANG.cs">
+      <DependentUpon>DBMienNam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflict_MIENNAM_NHACUNGCAP.cs">
+      <DependentUpon>DBMienNam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflict_MIENNAM_SANPHAM.cs">
+      <DependentUpon>DBMienNam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflict_MIENNAM_sysdiagrams.cs">
+      <DependentUpon>DBMienNam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflict_MIENNAM_TK_KHACHHANG.cs">
+      <DependentUpon>DBMienNam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflict_MIENNAM_TK_NCC.cs">
+      <DependentUpon>DBMienNam.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflict_MIENTRUNG_ADMIN.cs">
+      <DependentUpon>DBMienTrung.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflict_MIENTRUNG_CT_HOADON.cs">
+      <DependentUpon>DBMienTrung.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflict_MIENTRUNG_HOADON.cs">
+      <DependentUpon>DBMienTrung.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflict_MIENTRUNG_KHACHHANG.cs">
+      <DependentUpon>DBMienTrung.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflict_MIENTRUNG_KHUVUC.cs">
+      <DependentUpon>DBMienTrung.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflict_MIENTRUNG_LOAIHANG.cs">
+      <DependentUpon>DBMienTrung.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflict_MIENTRUNG_NHACUNGCAP.cs">
+      <DependentUpon>DBMienTrung.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflict_MIENTRUNG_SANPHAM.cs">
+      <DependentUpon>DBMienTrung.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflict_MIENTRUNG_sysdiagrams.cs">
+      <DependentUpon>DBMienTrung.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflict_MIENTRUNG_TK_KHACHHANG.cs">
+      <DependentUpon>DBMienTrung.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_conflict_MIENTRUNG_TK_NCC.cs">
+      <DependentUpon>DBMienTrung.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_contents.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_current_partition_mappings.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_dynamic_snapshots.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_errorlineage.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_generation_partition_mappings.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_genhistory.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_history.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_identity_range.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_log_files.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_metadataaction_request.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_partition_groups.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_past_partition_mappings.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_replinfo.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_sessions.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_settingshistory.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_supportability_settings.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSmerge_tombstone.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSrepl_errors.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MSsnapshotdeliveryprogress.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NHACUNGCAP.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SANPHAM.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysmergearticle.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysmergepartitioninfo.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysmergepublication.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysmergeschemaarticle.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysmergeschemachange.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysmergesubscription.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysmergesubsetfilter.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TK_KHACHHANG.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TK_NCC.cs">
+      <DependentUpon>DBMienBac.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\bootstrap-grid.css" />
+    <Content Include="Content\css\bootstrap-grid.min.css" />
+    <Content Include="Content\css\bootstrap-reboot.css" />
+    <Content Include="Content\css\bootstrap-reboot.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\HinhAnh\giohang.png" />
+    <Content Include="Content\HinhAnh\logo.png" />
+    <Content Include="Content\HinhAnh\logo1.jfif" />
+    <Content Include="Content\HinhAnh\logo2.png" />
+    <Content Include="Content\HinhAnh\logo3.jfif" />
+    <Content Include="Content\HinhAnh\logo3.png" />
+    <Content Include="Content\HinhAnh\quangcao1.jpeg" />
+    <Content Include="Content\HinhAnh\quangcao2.png" />
+    <Content Include="Content\HinhAnh\quangcao3.jpeg" />
+    <Content Include="Content\HinhAnh\sp1.PNG" />
+    <Content Include="Content\HinhAnh\sp10.PNG" />
+    <Content Include="Content\HinhAnh\sp11.PNG" />
+    <Content Include="Content\HinhAnh\sp12.PNG" />
+    <Content Include="Content\HinhAnh\sp13.PNG" />
+    <Content Include="Content\HinhAnh\sp14.PNG" />
+    <Content Include="Content\HinhAnh\sp15.PNG" />
+    <Content Include="Content\HinhAnh\sp16.PNG" />
+    <Content Include="Content\HinhAnh\sp17.PNG" />
+    <Content Include="Content\HinhAnh\sp18.PNG" />
+    <Content Include="Content\HinhAnh\sp19.PNG" />
+    <Content Include="Content\HinhAnh\sp2.PNG" />
+    <Content Include="Content\HinhAnh\sp20.PNG" />
+    <Content Include="Content\HinhAnh\sp21.PNG" />
+    <Content Include="Content\HinhAnh\sp22.PNG" />
+    <Content Include="Content\HinhAnh\sp23.PNG" />
+    <Content Include="Content\HinhAnh\sp24.PNG" />
+    <Content Include="Content\HinhAnh\sp25.PNG" />
+    <Content Include="Content\HinhAnh\sp26.PNG" />
+    <Content Include="Content\HinhAnh\sp27.PNG" />
+    <Content Include="Content\HinhAnh\sp28.PNG" />
+    <Content Include="Content\HinhAnh\sp29.PNG" />
+    <Content Include="Content\HinhAnh\sp3.PNG" />
+    <Content Include="Content\HinhAnh\sp30.PNG" />
+    <Content Include="Content\HinhAnh\sp31.PNG" />
+    <Content Include="Content\HinhAnh\sp32.PNG" />
+    <Content Include="Content\HinhAnh\sp33.PNG" />
+    <Content Include="Content\HinhAnh\sp34.PNG" />
+    <Content Include="Content\HinhAnh\sp35.PNG" />
+    <Content Include="Content\HinhAnh\sp36.PNG" />
+    <Content Include="Content\HinhAnh\sp37.PNG" />
+    <Content Include="Content\HinhAnh\sp38.PNG" />
+    <Content Include="Content\HinhAnh\sp39.PNG" />
+    <Content Include="Content\HinhAnh\sp4.PNG" />
+    <Content Include="Content\HinhAnh\sp40.PNG" />
+    <Content Include="Content\HinhAnh\sp41.PNG" />
+    <Content Include="Content\HinhAnh\sp42.PNG" />
+    <Content Include="Content\HinhAnh\sp5.PNG" />
+    <Content Include="Content\HinhAnh\sp6.PNG" />
+    <Content Include="Content\HinhAnh\sp7.PNG" />
+    <Content Include="Content\HinhAnh\sp8.PNG" />
+    <Content Include="Content\HinhAnh\sp9.PNG" />
+    <Content Include="Content\HinhAnh\th1.PNG" />
+    <Content Include="Content\HinhAnh\th10.PNG" />
+    <Content Include="Content\HinhAnh\th11.PNG" />
+    <Content Include="Content\HinhAnh\th12.PNG" />
+    <Content Include="Content\HinhAnh\th13.PNG" />
+    <Content Include="Content\HinhAnh\th14.PNG" />
+    <Content Include="Content\HinhAnh\th15.PNG" />
+    <Content Include="Content\HinhAnh\th16.PNG" />
+    <Content Include="Content\HinhAnh\th17.PNG" />
+    <Content Include="Content\HinhAnh\th18.PNG" />
+    <Content Include="Content\HinhAnh\th19.PNG" />
+    <Content Include="Content\HinhAnh\th2.PNG" />
+    <Content Include="Content\HinhAnh\th20.PNG" />
+    <Content Include="Content\HinhAnh\th21.PNG" />
+    <Content Include="Content\HinhAnh\th22.PNG" />
+    <Content Include="Content\HinhAnh\th23.PNG" />
+    <Content Include="Content\HinhAnh\th24.PNG" />
+    <Content Include="Content\HinhAnh\th25.PNG" />
+    <Content Include="Content\HinhAnh\th26.PNG" />
+    <Content Include="Content\HinhAnh\th27.PNG" />
+    <Content Include="Content\HinhAnh\th28.PNG" />
+    <Content Include="Content\HinhAnh\th29.PNG" />
+    <Content Include="Content\HinhAnh\th3.PNG" />
+    <Content Include="Content\HinhAnh\th30.PNG" />
+    <Content Include="Content\HinhAnh\th4.PNG" />
+    <Content Include="Content\HinhAnh\th5.PNG" />
+    <Content Include="Content\HinhAnh\th6.PNG" />
+    <Content Include="Content\HinhAnh\th7.PNG" />
+    <Content Include="Content\HinhAnh\th8.PNG" />
+    <Content Include="Content\HinhAnh\th9.PNG" />
+    <Content Include="Content\HinhAnh\timkiem.png" />
+    <Content Include="Content\jquery_321\jquery-3.2.1.js" />
+    <Content Include="Content\jquery_321\jquery-3.2.1.min.js" />
+    <Content Include="Content\jquery_321\slider.js" />
+    <Content Include="Content\js\bootstrap.bundle.js" />
+    <Content Include="Content\js\bootstrap.bundle.min.js" />
+    <Content Include="Content\js\bootstrap.js" />
+    <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\DBMienBac.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBMienBac.edmx</DependentUpon>
+      <LastGenOutput>DBMienBac.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DBMienBac.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBMienBac.edmx</DependentUpon>
+      <LastGenOutput>DBMienBac.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DBMienNam.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBMienNam.edmx</DependentUpon>
+      <LastGenOutput>DBMienNam.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DBMienNam.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBMienNam.edmx</DependentUpon>
+      <LastGenOutput>DBMienNam.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DBMienTrung.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBMienTrung.edmx</DependentUpon>
+      <LastGenOutput>DBMienTrung.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DBMienTrung.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBMienTrung.edmx</DependentUpon>
+      <LastGenOutput>DBMienTrung.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\css\bootstrap-grid.css.map" />
+    <Content Include="Content\css\bootstrap-grid.min.css.map" />
+    <Content Include="Content\css\bootstrap-reboot.css.map" />
+    <Content Include="Content\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\css\bootstrap.css.map" />
+    <Content Include="Content\css\bootstrap.min.css.map" />
+    <Content Include="Content\jquery_321\jquery-3.2.1.min.map" />
+    <Content Include="Content\js\bootstrap.bundle.js.map" />
+    <Content Include="Content\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Content\js\bootstrap.js.map" />
+    <Content Include="Content\js\bootstrap.min.js.map" />
+    <EntityDeploy Include="Models\DBMienNam.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DBMienNam.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DBMienNam.edmx.diagram">
+      <DependentUpon>DBMienNam.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\DBMienTrung.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DBMienTrung.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DBMienTrung.edmx.diagram">
+      <DependentUpon>DBMienTrung.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\DBMienBac.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DBMienBac.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DBMienBac.edmx.diagram">
+      <DependentUpon>DBMienBac.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\DangKy_DangNhap\DangNhap.cshtml" />
+    <Content Include="Views\Home\LoaiHang.cshtml" />
+    <Content Include="Views\Home\Khuvuc.cshtml" />
+    <Content Include="Views\Home\CTSANPHAM.cshtml" />
+    <Content Include="Views\DangKy_DangNhap\DangKy.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52579</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44381/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

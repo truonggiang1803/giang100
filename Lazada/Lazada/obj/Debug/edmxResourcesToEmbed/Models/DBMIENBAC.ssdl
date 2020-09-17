@@ -1,0 +1,1859 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QL_LAZADAModel2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ADMIN">
+    <Key>
+      <PropertyRef Name="MAAD" />
+    </Key>
+    <Property Name="MAAD" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="TENAD" Type="varchar" MaxLength="30" />
+    <Property Name="MATKHAU" Type="varchar" MaxLength="30" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CT_HOADON">
+    <Key>
+      <PropertyRef Name="MASP" />
+      <PropertyRef Name="MAHD" />
+    </Key>
+    <Property Name="MASP" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="MAHD" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="DONGIA" Type="int" />
+    <Property Name="SOLUONG" Type="int" />
+    <Property Name="THANHTIEN" Type="int" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HOADON">
+    <Key>
+      <PropertyRef Name="MAHD" />
+    </Key>
+    <Property Name="MAHD" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="MAKH" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="THANHTIEN" Type="int" />
+    <Property Name="NGAYLAP" Type="datetime" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KHACHHANG">
+    <Key>
+      <PropertyRef Name="MAKH" />
+    </Key>
+    <Property Name="MAKH" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="MAKV" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="MATK_KH" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="TENKH" Type="nvarchar" MaxLength="50" />
+    <Property Name="DIACHI" Type="nvarchar(max)" />
+    <Property Name="SDT" Type="varchar" MaxLength="50" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="50" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KHUVUC">
+    <Key>
+      <PropertyRef Name="MAKV" />
+    </Key>
+    <Property Name="MAKV" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="TENKV" Type="nvarchar" MaxLength="30" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LOAIHANG">
+    <Key>
+      <PropertyRef Name="MALOAI" />
+    </Key>
+    <Property Name="MALOAI" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="TENLOAI" Type="nvarchar" MaxLength="50" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.MSdynamicsnapshotjobs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSdynamicsnapshotjobs">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="pubid" />
+      <PropertyRef Name="job_id" />
+      <PropertyRef Name="agent_id" />
+      <PropertyRef Name="dynamic_snapshot_location" />
+      <PropertyRef Name="partition_id" />
+      <PropertyRef Name="computed_dynsnap_location" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="pubid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="job_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="agent_id" Type="int" Nullable="false" />
+    <Property Name="dynamic_filter_login" Type="nvarchar" MaxLength="128" />
+    <Property Name="dynamic_filter_hostname" Type="nvarchar" MaxLength="128" />
+    <Property Name="dynamic_snapshot_location" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="partition_id" Type="int" Nullable="false" />
+    <Property Name="computed_dynsnap_location" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MSdynamicsnapshotviews">
+    <Key>
+      <PropertyRef Name="dynamic_snapshot_view_name" />
+    </Key>
+    <Property Name="dynamic_snapshot_view_name" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.MSmerge_agent_parameters' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSmerge_agent_parameters">
+    <Key>
+      <PropertyRef Name="profile_name" />
+      <PropertyRef Name="parameter_name" />
+      <PropertyRef Name="value" />
+    </Key>
+    <Property Name="profile_name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="parameter_name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="value" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.MSmerge_altsyncpartners' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSmerge_altsyncpartners">
+    <Key>
+      <PropertyRef Name="subid" />
+      <PropertyRef Name="alternate_subid" />
+    </Key>
+    <Property Name="subid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="alternate_subid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.MSmerge_articlehistory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSmerge_articlehistory">
+    <Key>
+      <PropertyRef Name="session_id" />
+      <PropertyRef Name="start_time" />
+      <PropertyRef Name="inserts" />
+      <PropertyRef Name="updates" />
+      <PropertyRef Name="deletes" />
+      <PropertyRef Name="conflicts" />
+      <PropertyRef Name="rows_retried" />
+      <PropertyRef Name="percent_complete" />
+      <PropertyRef Name="relative_cost" />
+    </Key>
+    <Property Name="session_id" Type="int" Nullable="false" />
+    <Property Name="phase_id" Type="int" />
+    <Property Name="article_name" Type="nvarchar" MaxLength="128" />
+    <Property Name="start_time" Type="datetime" Nullable="false" />
+    <Property Name="duration" Type="int" />
+    <Property Name="inserts" Type="int" Nullable="false" />
+    <Property Name="updates" Type="int" Nullable="false" />
+    <Property Name="deletes" Type="int" Nullable="false" />
+    <Property Name="conflicts" Type="int" Nullable="false" />
+    <Property Name="rows_retried" Type="int" Nullable="false" />
+    <Property Name="percent_complete" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="estimated_changes" Type="int" />
+    <Property Name="relative_cost" Type="decimal" Precision="12" Scale="2" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.MSmerge_conflict_MIENBAC_ADMIN' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSmerge_conflict_MIENBAC_ADMIN">
+    <Key>
+      <PropertyRef Name="MAAD" />
+      <PropertyRef Name="rowguid" />
+    </Key>
+    <Property Name="MAAD" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="TENAD" Type="varchar" MaxLength="30" />
+    <Property Name="MATKHAU" Type="varchar" MaxLength="30" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="origin_datasource_id" Type="uniqueidentifier" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.MSmerge_conflict_MIENBAC_CT_HOADON' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSmerge_conflict_MIENBAC_CT_HOADON">
+    <Key>
+      <PropertyRef Name="MASP" />
+      <PropertyRef Name="MAHD" />
+      <PropertyRef Name="rowguid" />
+    </Key>
+    <Property Name="MASP" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="MAHD" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="DONGIA" Type="int" />
+    <Property Name="SOLUONG" Type="int" />
+    <Property Name="THANHTIEN" Type="int" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="origin_datasource_id" Type="uniqueidentifier" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.MSmerge_conflict_MIENBAC_HOADON' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSmerge_conflict_MIENBAC_HOADON">
+    <Key>
+      <PropertyRef Name="MAHD" />
+      <PropertyRef Name="MAKH" />
+      <PropertyRef Name="rowguid" />
+    </Key>
+    <Property Name="MAHD" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="MAKH" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="THANHTIEN" Type="int" />
+    <Property Name="NGAYLAP" Type="datetime" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="origin_datasource_id" Type="uniqueidentifier" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.MSmerge_conflict_MIENBAC_KHACHHANG' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSmerge_conflict_MIENBAC_KHACHHANG">
+    <Key>
+      <PropertyRef Name="MAKH" />
+      <PropertyRef Name="MAKV" />
+      <PropertyRef Name="MATK_KH" />
+      <PropertyRef Name="rowguid" />
+    </Key>
+    <Property Name="MAKH" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="MAKV" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="MATK_KH" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="TENKH" Type="nvarchar" MaxLength="50" />
+    <Property Name="DIACHI" Type="nvarchar(max)" />
+    <Property Name="SDT" Type="varchar" MaxLength="50" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="50" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="origin_datasource_id" Type="uniqueidentifier" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.MSmerge_conflict_MIENBAC_KHUVUC' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSmerge_conflict_MIENBAC_KHUVUC">
+    <Key>
+      <PropertyRef Name="MAKV" />
+      <PropertyRef Name="rowguid" />
+    </Key>
+    <Property Name="MAKV" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="TENKV" Type="nvarchar" MaxLength="30" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="origin_datasource_id" Type="uniqueidentifier" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.MSmerge_conflict_MIENBAC_LOAIHANG' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSmerge_conflict_MIENBAC_LOAIHANG">
+    <Key>
+      <PropertyRef Name="MALOAI" />
+      <PropertyRef Name="rowguid" />
+    </Key>
+    <Property Name="MALOAI" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="TENLOAI" Type="nvarchar" MaxLength="50" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="origin_datasource_id" Type="uniqueidentifier" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.MSmerge_conflict_MIENBAC_NHACUNGCAP' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSmerge_conflict_MIENBAC_NHACUNGCAP">
+    <Key>
+      <PropertyRef Name="MANCC" />
+      <PropertyRef Name="MAKV" />
+      <PropertyRef Name="MATK_NCC" />
+      <PropertyRef Name="rowguid" />
+    </Key>
+    <Property Name="MANCC" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="MAKV" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="MATK_NCC" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="TENNCC" Type="nvarchar" MaxLength="50" />
+    <Property Name="DIACHI" Type="nvarchar(max)" />
+    <Property Name="SDT" Type="varchar" MaxLength="50" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="50" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="origin_datasource_id" Type="uniqueidentifier" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.MSmerge_conflict_MIENBAC_SANPHAM' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSmerge_conflict_MIENBAC_SANPHAM">
+    <Key>
+      <PropertyRef Name="MASP" />
+      <PropertyRef Name="MANCC" />
+      <PropertyRef Name="MALOAI" />
+      <PropertyRef Name="rowguid" />
+    </Key>
+    <Property Name="MASP" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="MANCC" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="MALOAI" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="TENSP" Type="nvarchar" MaxLength="50" />
+    <Property Name="DONGIA" Type="int" />
+    <Property Name="DVT" Type="nvarchar" MaxLength="50" />
+    <Property Name="SOLUONG" Type="int" />
+    <Property Name="ANH" Type="varchar" MaxLength="50" />
+    <Property Name="MOTA" Type="nvarchar(max)" />
+    <Property Name="KICHTHUOC" Type="nvarchar" MaxLength="50" />
+    <Property Name="TRONGLUONG" Type="nvarchar" MaxLength="50" />
+    <Property Name="MAUSAC" Type="nvarchar" MaxLength="50" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="origin_datasource_id" Type="uniqueidentifier" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.MSmerge_conflict_MIENBAC_sysdiagrams' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSmerge_conflict_MIENBAC_sysdiagrams">
+    <Key>
+      <PropertyRef Name="name" />
+      <PropertyRef Name="principal_id" />
+      <PropertyRef Name="diagram_id" />
+      <PropertyRef Name="rowguid" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="origin_datasource_id" Type="uniqueidentifier" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.MSmerge_conflict_MIENBAC_TK_KHACHHANG' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSmerge_conflict_MIENBAC_TK_KHACHHANG">
+    <Key>
+      <PropertyRef Name="MATK_KH" />
+      <PropertyRef Name="rowguid" />
+    </Key>
+    <Property Name="MATK_KH" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="TENTK_KH" Type="nvarchar" MaxLength="50" />
+    <Property Name="MK_KH" Type="varchar" MaxLength="50" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="origin_datasource_id" Type="uniqueidentifier" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.MSmerge_conflict_MIENBAC_TK_NCC' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSmerge_conflict_MIENBAC_TK_NCC">
+    <Key>
+      <PropertyRef Name="MATK_NCC" />
+      <PropertyRef Name="rowguid" />
+    </Key>
+    <Property Name="MATK_NCC" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="TENTK_NCC" Type="nvarchar" MaxLength="50" />
+    <Property Name="MK_KH" Type="varchar" MaxLength="50" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="origin_datasource_id" Type="uniqueidentifier" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.MSmerge_conflicts_info' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSmerge_conflicts_info">
+    <Key>
+      <PropertyRef Name="tablenick" />
+      <PropertyRef Name="rowguid" />
+      <PropertyRef Name="MSrepl_create_time" />
+    </Key>
+    <Property Name="tablenick" Type="int" Nullable="false" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="origin_datasource" Type="nvarchar" MaxLength="255" />
+    <Property Name="conflict_type" Type="int" />
+    <Property Name="reason_code" Type="int" />
+    <Property Name="reason_text" Type="nvarchar" MaxLength="720" />
+    <Property Name="pubid" Type="uniqueidentifier" />
+    <Property Name="MSrepl_create_time" Type="datetime" Nullable="false" />
+    <Property Name="origin_datasource_id" Type="uniqueidentifier" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.MSmerge_contents' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSmerge_contents">
+    <Key>
+      <PropertyRef Name="tablenick" />
+      <PropertyRef Name="rowguid" />
+      <PropertyRef Name="generation" />
+      <PropertyRef Name="lineage" />
+    </Key>
+    <Property Name="tablenick" Type="int" Nullable="false" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="generation" Type="bigint" Nullable="false" />
+    <Property Name="partchangegen" Type="bigint" />
+    <Property Name="lineage" Type="varbinary" MaxLength="311" Nullable="false" />
+    <Property Name="colv1" Type="varbinary" MaxLength="2953" />
+    <Property Name="marker" Type="uniqueidentifier" />
+    <Property Name="logical_record_parent_rowguid" Type="uniqueidentifier" />
+    <Property Name="logical_record_lineage" Type="varbinary" MaxLength="311" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.MSmerge_current_partition_mappings' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSmerge_current_partition_mappings">
+    <Key>
+      <PropertyRef Name="publication_number" />
+      <PropertyRef Name="tablenick" />
+      <PropertyRef Name="rowguid" />
+      <PropertyRef Name="partition_id" />
+    </Key>
+    <Property Name="publication_number" Type="smallint" Nullable="false" />
+    <Property Name="tablenick" Type="int" Nullable="false" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="partition_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MSmerge_dynamic_snapshots">
+    <Key>
+      <PropertyRef Name="partition_id" />
+    </Key>
+    <Property Name="partition_id" Type="int" Nullable="false" />
+    <Property Name="dynamic_snapshot_location" Type="nvarchar" MaxLength="255" />
+    <Property Name="last_updated" Type="datetime" />
+    <Property Name="last_started" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.MSmerge_errorlineage' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSmerge_errorlineage">
+    <Key>
+      <PropertyRef Name="tablenick" />
+      <PropertyRef Name="rowguid" />
+    </Key>
+    <Property Name="tablenick" Type="int" Nullable="false" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="lineage" Type="varbinary" MaxLength="311" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.MSmerge_generation_partition_mappings' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSmerge_generation_partition_mappings">
+    <Key>
+      <PropertyRef Name="publication_number" />
+      <PropertyRef Name="generation" />
+      <PropertyRef Name="partition_id" />
+      <PropertyRef Name="changecount" />
+    </Key>
+    <Property Name="publication_number" Type="smallint" Nullable="false" />
+    <Property Name="generation" Type="bigint" Nullable="false" />
+    <Property Name="partition_id" Type="int" Nullable="false" />
+    <Property Name="changecount" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.MSmerge_genhistory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSmerge_genhistory">
+    <Key>
+      <PropertyRef Name="guidsrc" />
+      <PropertyRef Name="generation" />
+      <PropertyRef Name="nicknames" />
+      <PropertyRef Name="coldate" />
+      <PropertyRef Name="genstatus" />
+      <PropertyRef Name="changecount" />
+      <PropertyRef Name="subscriber_number" />
+    </Key>
+    <Property Name="guidsrc" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="pubid" Type="uniqueidentifier" />
+    <Property Name="generation" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="art_nick" Type="int" />
+    <Property Name="nicknames" Type="varbinary" MaxLength="1001" Nullable="false" />
+    <Property Name="coldate" Type="datetime" Nullable="false" />
+    <Property Name="genstatus" Type="tinyint" Nullable="false" />
+    <Property Name="changecount" Type="int" Nullable="false" />
+    <Property Name="subscriber_number" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.MSmerge_history' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSmerge_history">
+    <Key>
+      <PropertyRef Name="agent_id" />
+      <PropertyRef Name="comments" />
+      <PropertyRef Name="error_id" />
+      <PropertyRef Name="timestamp" />
+      <PropertyRef Name="updateable_row" />
+      <PropertyRef Name="time" />
+    </Key>
+    <Property Name="session_id" Type="int" />
+    <Property Name="agent_id" Type="int" Nullable="false" />
+    <Property Name="comments" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="error_id" Type="int" Nullable="false" />
+    <Property Name="timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="updateable_row" Type="bit" Nullable="false" />
+    <Property Name="time" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.MSmerge_identity_range' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSmerge_identity_range">
+    <Key>
+      <PropertyRef Name="subid" />
+      <PropertyRef Name="artid" />
+      <PropertyRef Name="is_pub_range" />
+    </Key>
+    <Property Name="subid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="artid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="range_begin" Type="numeric" Precision="38" Scale="0" />
+    <Property Name="range_end" Type="numeric" Precision="38" Scale="0" />
+    <Property Name="next_range_begin" Type="numeric" Precision="38" Scale="0" />
+    <Property Name="next_range_end" Type="numeric" Precision="38" Scale="0" />
+    <Property Name="is_pub_range" Type="bit" Nullable="false" />
+    <Property Name="max_used" Type="numeric" Precision="38" Scale="0" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.MSmerge_log_files' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSmerge_log_files">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="file_name" />
+      <PropertyRef Name="upload_time" />
+      <PropertyRef Name="log_file_type" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pubid" Type="uniqueidentifier" />
+    <Property Name="subid" Type="uniqueidentifier" />
+    <Property Name="web_server" Type="nvarchar" MaxLength="128" />
+    <Property Name="file_name" Type="nvarchar" MaxLength="2000" Nullable="false" />
+    <Property Name="upload_time" Type="datetime" Nullable="false" />
+    <Property Name="log_file_type" Type="int" Nullable="false" />
+    <Property Name="log_file" Type="varbinary(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.MSmerge_metadataaction_request' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSmerge_metadataaction_request">
+    <Key>
+      <PropertyRef Name="tablenick" />
+      <PropertyRef Name="rowguid" />
+      <PropertyRef Name="action" />
+    </Key>
+    <Property Name="tablenick" Type="int" Nullable="false" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="action" Type="tinyint" Nullable="false" />
+    <Property Name="generation" Type="bigint" />
+    <Property Name="changed" Type="int" />
+  </EntityType>
+  <EntityType Name="MSmerge_partition_groups">
+    <Key>
+      <PropertyRef Name="partition_id" />
+    </Key>
+    <Property Name="partition_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="publication_number" Type="smallint" Nullable="false" />
+    <Property Name="maxgen_whenadded" Type="bigint" />
+    <Property Name="using_partition_groups" Type="bit" />
+    <Property Name="is_partition_active" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.MSmerge_past_partition_mappings' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSmerge_past_partition_mappings">
+    <Key>
+      <PropertyRef Name="publication_number" />
+      <PropertyRef Name="tablenick" />
+      <PropertyRef Name="rowguid" />
+      <PropertyRef Name="partition_id" />
+      <PropertyRef Name="reason" />
+    </Key>
+    <Property Name="publication_number" Type="smallint" Nullable="false" />
+    <Property Name="tablenick" Type="int" Nullable="false" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="partition_id" Type="int" Nullable="false" />
+    <Property Name="generation" Type="bigint" />
+    <Property Name="reason" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.MSmerge_replinfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSmerge_replinfo">
+    <Key>
+      <PropertyRef Name="repid" />
+      <PropertyRef Name="use_interactive_resolver" />
+      <PropertyRef Name="validation_level" />
+      <PropertyRef Name="resync_gen" />
+      <PropertyRef Name="login_name" />
+      <PropertyRef Name="sync_info" />
+    </Key>
+    <Property Name="repid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="use_interactive_resolver" Type="bit" Nullable="false" />
+    <Property Name="validation_level" Type="int" Nullable="false" />
+    <Property Name="resync_gen" Type="bigint" Nullable="false" />
+    <Property Name="login_name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="hostname" Type="nvarchar" MaxLength="128" />
+    <Property Name="merge_jobid" Type="binary" MaxLength="16" />
+    <Property Name="sync_info" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.MSmerge_sessions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSmerge_sessions">
+    <Key>
+      <PropertyRef Name="session_id" />
+      <PropertyRef Name="agent_id" />
+      <PropertyRef Name="delivery_time" />
+      <PropertyRef Name="upload_time" />
+      <PropertyRef Name="download_time" />
+      <PropertyRef Name="schema_change_time" />
+      <PropertyRef Name="prepare_snapshot_time" />
+      <PropertyRef Name="delivery_rate" />
+      <PropertyRef Name="time_remaining" />
+      <PropertyRef Name="percent_complete" />
+      <PropertyRef Name="runstatus" />
+      <PropertyRef Name="timestamp" />
+    </Key>
+    <Property Name="subid" Type="uniqueidentifier" />
+    <Property Name="session_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="agent_id" Type="int" Nullable="false" />
+    <Property Name="start_time" Type="datetime" />
+    <Property Name="end_time" Type="datetime" />
+    <Property Name="duration" Type="int" />
+    <Property Name="delivery_time" Type="int" Nullable="false" />
+    <Property Name="upload_time" Type="int" Nullable="false" />
+    <Property Name="download_time" Type="int" Nullable="false" />
+    <Property Name="schema_change_time" Type="int" Nullable="false" />
+    <Property Name="prepare_snapshot_time" Type="int" Nullable="false" />
+    <Property Name="delivery_rate" Type="decimal" Precision="12" Scale="2" Nullable="false" />
+    <Property Name="time_remaining" Type="int" Nullable="false" />
+    <Property Name="percent_complete" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="upload_inserts" Type="int" />
+    <Property Name="upload_updates" Type="int" />
+    <Property Name="upload_deletes" Type="int" />
+    <Property Name="upload_conflicts" Type="int" />
+    <Property Name="upload_rows_retried" Type="int" />
+    <Property Name="download_inserts" Type="int" />
+    <Property Name="download_updates" Type="int" />
+    <Property Name="download_deletes" Type="int" />
+    <Property Name="download_conflicts" Type="int" />
+    <Property Name="download_rows_retried" Type="int" />
+    <Property Name="schema_changes" Type="int" />
+    <Property Name="bulk_inserts" Type="int" />
+    <Property Name="metadata_rows_cleanedup" Type="int" />
+    <Property Name="runstatus" Type="int" Nullable="false" />
+    <Property Name="estimated_upload_changes" Type="int" />
+    <Property Name="estimated_download_changes" Type="int" />
+    <Property Name="connection_type" Type="int" />
+    <Property Name="timestamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="current_phase_id" Type="int" />
+    <Property Name="spid" Type="smallint" />
+    <Property Name="spid_login_time" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.MSmerge_settingshistory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSmerge_settingshistory">
+    <Key>
+      <PropertyRef Name="pubid" />
+      <PropertyRef Name="eventtype" />
+    </Key>
+    <Property Name="eventtime" Type="datetime" />
+    <Property Name="pubid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="artid" Type="uniqueidentifier" />
+    <Property Name="eventtype" Type="tinyint" Nullable="false" />
+    <Property Name="propertyname" Type="nvarchar" MaxLength="128" />
+    <Property Name="previousvalue" Type="nvarchar" MaxLength="128" />
+    <Property Name="newvalue" Type="nvarchar" MaxLength="128" />
+    <Property Name="eventtext" Type="nvarchar" MaxLength="2000" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.MSmerge_supportability_settings' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSmerge_supportability_settings">
+    <Key>
+      <PropertyRef Name="support_options" />
+      <PropertyRef Name="log_severity" />
+      <PropertyRef Name="log_modules" />
+      <PropertyRef Name="log_file_size" />
+      <PropertyRef Name="no_of_log_files" />
+      <PropertyRef Name="upload_interval" />
+      <PropertyRef Name="delete_after_upload" />
+    </Key>
+    <Property Name="pubid" Type="uniqueidentifier" />
+    <Property Name="subid" Type="uniqueidentifier" />
+    <Property Name="web_server" Type="nvarchar" MaxLength="128" />
+    <Property Name="support_options" Type="int" Nullable="false" />
+    <Property Name="log_severity" Type="int" Nullable="false" />
+    <Property Name="log_modules" Type="int" Nullable="false" />
+    <Property Name="log_file_path" Type="nvarchar" MaxLength="255" />
+    <Property Name="log_file_name" Type="nvarchar" MaxLength="128" />
+    <Property Name="log_file_size" Type="int" Nullable="false" />
+    <Property Name="no_of_log_files" Type="int" Nullable="false" />
+    <Property Name="upload_interval" Type="int" Nullable="false" />
+    <Property Name="delete_after_upload" Type="int" Nullable="false" />
+    <Property Name="custom_script" Type="nvarchar" MaxLength="2048" />
+    <Property Name="message_pattern" Type="nvarchar" MaxLength="2000" />
+    <Property Name="last_log_upload_time" Type="datetime" />
+    <Property Name="agent_xe" Type="varbinary(max)" />
+    <Property Name="agent_xe_ring_buffer" Type="varbinary(max)" />
+    <Property Name="sql_xe" Type="varbinary(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.MSmerge_tombstone' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSmerge_tombstone">
+    <Key>
+      <PropertyRef Name="rowguid" />
+      <PropertyRef Name="tablenick" />
+      <PropertyRef Name="type" />
+      <PropertyRef Name="lineage" />
+      <PropertyRef Name="generation" />
+    </Key>
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="tablenick" Type="int" Nullable="false" />
+    <Property Name="type" Type="tinyint" Nullable="false" />
+    <Property Name="lineage" Type="varbinary" MaxLength="311" Nullable="false" />
+    <Property Name="generation" Type="bigint" Nullable="false" />
+    <Property Name="logical_record_parent_rowguid" Type="uniqueidentifier" />
+    <Property Name="logical_record_lineage" Type="varbinary" MaxLength="311" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.MSrepl_errors' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSrepl_errors">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="time" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="time" Type="datetime" Nullable="false" />
+    <Property Name="error_type_id" Type="int" />
+    <Property Name="source_type_id" Type="int" />
+    <Property Name="source_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="error_code" Type="nvarchar" MaxLength="128" />
+    <Property Name="error_text" Type="nvarchar(max)" />
+    <Property Name="xact_seqno" Type="varbinary" MaxLength="16" />
+    <Property Name="command_id" Type="int" />
+    <Property Name="session_id" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.MSsnapshotdeliveryprogress' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MSsnapshotdeliveryprogress">
+    <Key>
+      <PropertyRef Name="session_token" />
+      <PropertyRef Name="progress_token_hash" />
+      <PropertyRef Name="progress_token" />
+    </Key>
+    <Property Name="session_token" Type="nvarchar" MaxLength="260" Nullable="false" />
+    <Property Name="progress_token_hash" Type="int" Nullable="false" />
+    <Property Name="progress_token" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="progress_timestamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="NHACUNGCAP">
+    <Key>
+      <PropertyRef Name="MANCC" />
+    </Key>
+    <Property Name="MANCC" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="MAKV" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="MATK_NCC" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="TENNCC" Type="nvarchar" MaxLength="50" />
+    <Property Name="DIACHI" Type="nvarchar(max)" />
+    <Property Name="SDT" Type="varchar" MaxLength="50" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="50" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SANPHAM">
+    <Key>
+      <PropertyRef Name="MASP" />
+    </Key>
+    <Property Name="MASP" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="MANCC" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="MALOAI" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="TENSP" Type="nvarchar" MaxLength="50" />
+    <Property Name="DONGIA" Type="int" />
+    <Property Name="DVT" Type="nvarchar" MaxLength="50" />
+    <Property Name="SOLUONG" Type="int" />
+    <Property Name="ANH" Type="varchar" MaxLength="50" />
+    <Property Name="MOTA" Type="nvarchar(max)" />
+    <Property Name="KICHTHUOC" Type="nvarchar" MaxLength="50" />
+    <Property Name="TRONGLUONG" Type="nvarchar" MaxLength="50" />
+    <Property Name="MAUSAC" Type="nvarchar" MaxLength="50" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.sysmergearticles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="sysmergearticles">
+    <Key>
+      <PropertyRef Name="name" />
+      <PropertyRef Name="objid" />
+      <PropertyRef Name="sync_objid" />
+      <PropertyRef Name="artid" />
+      <PropertyRef Name="pubid" />
+      <PropertyRef Name="nickname" />
+      <PropertyRef Name="column_tracking" />
+      <PropertyRef Name="destination_object" />
+      <PropertyRef Name="excluded_col_count" />
+      <PropertyRef Name="vertical_partition" />
+      <PropertyRef Name="identity_support" />
+      <PropertyRef Name="allow_interactive_resolver" />
+      <PropertyRef Name="fast_multicol_updateproc" />
+      <PropertyRef Name="check_permissions" />
+      <PropertyRef Name="maxversion_at_cleanup" />
+      <PropertyRef Name="processing_order" />
+      <PropertyRef Name="upload_options" />
+      <PropertyRef Name="published_in_tran_pub" />
+      <PropertyRef Name="lightweight" />
+      <PropertyRef Name="compensate_for_errors" />
+      <PropertyRef Name="stream_blob_columns" />
+      <PropertyRef Name="preserve_rowguidcol" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="type" Type="tinyint" />
+    <Property Name="objid" Type="int" Nullable="false" />
+    <Property Name="sync_objid" Type="int" Nullable="false" />
+    <Property Name="view_type" Type="tinyint" />
+    <Property Name="artid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="255" />
+    <Property Name="pre_creation_command" Type="tinyint" />
+    <Property Name="pubid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="nickname" Type="int" Nullable="false" />
+    <Property Name="column_tracking" Type="int" Nullable="false" />
+    <Property Name="status" Type="tinyint" />
+    <Property Name="conflict_table" Type="nvarchar" MaxLength="128" />
+    <Property Name="creation_script" Type="nvarchar" MaxLength="255" />
+    <Property Name="conflict_script" Type="nvarchar" MaxLength="255" />
+    <Property Name="article_resolver" Type="nvarchar" MaxLength="255" />
+    <Property Name="ins_conflict_proc" Type="nvarchar" MaxLength="128" />
+    <Property Name="insert_proc" Type="nvarchar" MaxLength="128" />
+    <Property Name="update_proc" Type="nvarchar" MaxLength="128" />
+    <Property Name="select_proc" Type="nvarchar" MaxLength="128" />
+    <Property Name="metadata_select_proc" Type="nvarchar" MaxLength="128" />
+    <Property Name="delete_proc" Type="nvarchar" MaxLength="128" />
+    <Property Name="schema_option" Type="binary" MaxLength="8" />
+    <Property Name="destination_object" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="destination_owner" Type="nvarchar" MaxLength="128" />
+    <Property Name="resolver_clsid" Type="nvarchar" MaxLength="50" />
+    <Property Name="subset_filterclause" Type="nvarchar" MaxLength="1000" />
+    <Property Name="missing_col_count" Type="int" />
+    <Property Name="missing_cols" Type="varbinary" MaxLength="128" />
+    <Property Name="excluded_cols" Type="varbinary" MaxLength="128" />
+    <Property Name="excluded_col_count" Type="int" Nullable="false" />
+    <Property Name="columns" Type="varbinary" MaxLength="128" />
+    <Property Name="deleted_cols" Type="varbinary" MaxLength="128" />
+    <Property Name="resolver_info" Type="nvarchar" MaxLength="517" />
+    <Property Name="view_sel_proc" Type="nvarchar" MaxLength="290" />
+    <Property Name="gen_cur" Type="bigint" />
+    <Property Name="vertical_partition" Type="int" Nullable="false" />
+    <Property Name="identity_support" Type="int" Nullable="false" />
+    <Property Name="before_image_objid" Type="int" />
+    <Property Name="before_view_objid" Type="int" />
+    <Property Name="verify_resolver_signature" Type="int" />
+    <Property Name="allow_interactive_resolver" Type="bit" Nullable="false" />
+    <Property Name="fast_multicol_updateproc" Type="bit" Nullable="false" />
+    <Property Name="check_permissions" Type="int" Nullable="false" />
+    <Property Name="maxversion_at_cleanup" Type="int" Nullable="false" />
+    <Property Name="processing_order" Type="int" Nullable="false" />
+    <Property Name="upload_options" Type="tinyint" Nullable="false" />
+    <Property Name="published_in_tran_pub" Type="bit" Nullable="false" />
+    <Property Name="lightweight" Type="bit" Nullable="false" />
+    <Property Name="procname_postfix" Type="nchar" MaxLength="32" />
+    <Property Name="well_partitioned_lightweight" Type="bit" />
+    <Property Name="before_upd_view_objid" Type="int" />
+    <Property Name="delete_tracking" Type="bit" />
+    <Property Name="compensate_for_errors" Type="bit" Nullable="false" />
+    <Property Name="pub_range" Type="bigint" />
+    <Property Name="range" Type="bigint" />
+    <Property Name="threshold" Type="int" />
+    <Property Name="stream_blob_columns" Type="bit" Nullable="false" />
+    <Property Name="preserve_rowguidcol" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.sysmergepartitioninfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="sysmergepartitioninfo">
+    <Key>
+      <PropertyRef Name="artid" />
+      <PropertyRef Name="pubid" />
+    </Key>
+    <Property Name="artid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="pubid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="partition_view_id" Type="int" />
+    <Property Name="repl_view_id" Type="int" />
+    <Property Name="partition_deleted_view_rule" Type="nvarchar(max)" />
+    <Property Name="partition_inserted_view_rule" Type="nvarchar(max)" />
+    <Property Name="membership_eval_proc_name" Type="nvarchar" MaxLength="128" />
+    <Property Name="column_list" Type="nvarchar(max)" />
+    <Property Name="column_list_blob" Type="nvarchar(max)" />
+    <Property Name="expand_proc" Type="nvarchar" MaxLength="128" />
+    <Property Name="logical_record_parent_nickname" Type="int" />
+    <Property Name="logical_record_view" Type="int" />
+    <Property Name="logical_record_deleted_view_rule" Type="nvarchar(max)" />
+    <Property Name="logical_record_level_conflict_detection" Type="bit" />
+    <Property Name="logical_record_level_conflict_resolution" Type="bit" />
+    <Property Name="partition_options" Type="tinyint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.sysmergepublications' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="sysmergepublications">
+    <Key>
+      <PropertyRef Name="publisher" />
+      <PropertyRef Name="publisher_db" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="pubid" />
+      <PropertyRef Name="enabled_for_internet" />
+      <PropertyRef Name="dynamic_filters" />
+      <PropertyRef Name="snapshot_in_defaultfolder" />
+      <PropertyRef Name="compress_snapshot" />
+      <PropertyRef Name="ftp_port" />
+      <PropertyRef Name="backward_comp_level" />
+      <PropertyRef Name="max_concurrent_merge" />
+      <PropertyRef Name="max_concurrent_dynamic_snapshots" />
+      <PropertyRef Name="publication_number" />
+      <PropertyRef Name="replicate_ddl" />
+      <PropertyRef Name="allow_subscriber_initiated_snapshot" />
+      <PropertyRef Name="retention_period_unit" />
+      <PropertyRef Name="automatic_reinitialization_policy" />
+    </Key>
+    <Property Name="publisher" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="publisher_db" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="255" />
+    <Property Name="retention" Type="int" />
+    <Property Name="publication_type" Type="tinyint" />
+    <Property Name="pubid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="designmasterid" Type="uniqueidentifier" />
+    <Property Name="parentid" Type="uniqueidentifier" />
+    <Property Name="sync_mode" Type="tinyint" />
+    <Property Name="allow_push" Type="int" />
+    <Property Name="allow_pull" Type="int" />
+    <Property Name="allow_anonymous" Type="int" />
+    <Property Name="centralized_conflicts" Type="int" />
+    <Property Name="status" Type="tinyint" />
+    <Property Name="snapshot_ready" Type="tinyint" />
+    <Property Name="enabled_for_internet" Type="bit" Nullable="false" />
+    <Property Name="dynamic_filters" Type="bit" Nullable="false" />
+    <Property Name="snapshot_in_defaultfolder" Type="bit" Nullable="false" />
+    <Property Name="alt_snapshot_folder" Type="nvarchar" MaxLength="255" />
+    <Property Name="pre_snapshot_script" Type="nvarchar" MaxLength="255" />
+    <Property Name="post_snapshot_script" Type="nvarchar" MaxLength="255" />
+    <Property Name="compress_snapshot" Type="bit" Nullable="false" />
+    <Property Name="ftp_address" Type="nvarchar" MaxLength="128" />
+    <Property Name="ftp_port" Type="int" Nullable="false" />
+    <Property Name="ftp_subdirectory" Type="nvarchar" MaxLength="255" />
+    <Property Name="ftp_login" Type="nvarchar" MaxLength="128" />
+    <Property Name="ftp_password" Type="nvarchar" MaxLength="524" />
+    <Property Name="conflict_retention" Type="int" />
+    <Property Name="keep_before_values" Type="int" />
+    <Property Name="allow_subscription_copy" Type="bit" />
+    <Property Name="allow_synctoalternate" Type="bit" />
+    <Property Name="validate_subscriber_info" Type="nvarchar" MaxLength="500" />
+    <Property Name="ad_guidname" Type="nvarchar" MaxLength="128" />
+    <Property Name="backward_comp_level" Type="int" Nullable="false" />
+    <Property Name="max_concurrent_merge" Type="int" Nullable="false" />
+    <Property Name="max_concurrent_dynamic_snapshots" Type="int" Nullable="false" />
+    <Property Name="use_partition_groups" Type="smallint" />
+    <Property Name="dynamic_filters_function_list" Type="nvarchar" MaxLength="500" />
+    <Property Name="partition_id_eval_proc" Type="nvarchar" MaxLength="128" />
+    <Property Name="publication_number" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="replicate_ddl" Type="int" Nullable="false" />
+    <Property Name="allow_subscriber_initiated_snapshot" Type="bit" Nullable="false" />
+    <Property Name="distributor" Type="nvarchar" MaxLength="128" />
+    <Property Name="snapshot_jobid" Type="binary" MaxLength="16" />
+    <Property Name="allow_web_synchronization" Type="bit" />
+    <Property Name="web_synchronization_url" Type="nvarchar" MaxLength="500" />
+    <Property Name="allow_partition_realignment" Type="bit" />
+    <Property Name="retention_period_unit" Type="tinyint" Nullable="false" />
+    <Property Name="decentralized_conflicts" Type="int" />
+    <Property Name="generation_leveling_threshold" Type="int" />
+    <Property Name="automatic_reinitialization_policy" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.sysmergeschemaarticles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="sysmergeschemaarticles">
+    <Key>
+      <PropertyRef Name="name" />
+      <PropertyRef Name="objid" />
+      <PropertyRef Name="artid" />
+      <PropertyRef Name="pubid" />
+      <PropertyRef Name="destination_object" />
+      <PropertyRef Name="processing_order" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="type" Type="tinyint" />
+    <Property Name="objid" Type="int" Nullable="false" />
+    <Property Name="artid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="255" />
+    <Property Name="pre_creation_command" Type="tinyint" />
+    <Property Name="pubid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="status" Type="tinyint" />
+    <Property Name="creation_script" Type="nvarchar" MaxLength="255" />
+    <Property Name="schema_option" Type="binary" MaxLength="8" />
+    <Property Name="destination_object" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="destination_owner" Type="nvarchar" MaxLength="128" />
+    <Property Name="processing_order" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.sysmergeschemachange' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="sysmergeschemachange">
+    <Key>
+      <PropertyRef Name="pubid" />
+      <PropertyRef Name="schemaversion" />
+      <PropertyRef Name="schemaguid" />
+      <PropertyRef Name="schematype" />
+      <PropertyRef Name="schematext" />
+      <PropertyRef Name="schemastatus" />
+      <PropertyRef Name="schemasubtype" />
+    </Key>
+    <Property Name="pubid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="artid" Type="uniqueidentifier" />
+    <Property Name="schemaversion" Type="int" Nullable="false" />
+    <Property Name="schemaguid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="schematype" Type="int" Nullable="false" />
+    <Property Name="schematext" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="schemastatus" Type="tinyint" Nullable="false" />
+    <Property Name="schemasubtype" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.sysmergesubscriptions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="sysmergesubscriptions">
+    <Key>
+      <PropertyRef Name="db_name" />
+      <PropertyRef Name="datasource_type" />
+      <PropertyRef Name="subid" />
+      <PropertyRef Name="replnickname" />
+      <PropertyRef Name="replicastate" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="subscriber_type" />
+      <PropertyRef Name="subscription_type" />
+      <PropertyRef Name="sync_type" />
+      <PropertyRef Name="metadatacleanuptime" />
+      <PropertyRef Name="cleanedup_unsent_changes" />
+      <PropertyRef Name="replica_version" />
+      <PropertyRef Name="supportability_mode" />
+      <PropertyRef Name="subscriber_number" />
+    </Key>
+    <Property Name="subscriber_server" Type="nvarchar" MaxLength="128" />
+    <Property Name="db_name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="pubid" Type="uniqueidentifier" />
+    <Property Name="datasource_type" Type="int" Nullable="false" />
+    <Property Name="subid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="replnickname" Type="binary" MaxLength="6" Nullable="false" />
+    <Property Name="replicastate" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="status" Type="tinyint" Nullable="false" />
+    <Property Name="subscriber_type" Type="int" Nullable="false" />
+    <Property Name="subscription_type" Type="int" Nullable="false" />
+    <Property Name="sync_type" Type="tinyint" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="255" />
+    <Property Name="priority" Type="real" />
+    <Property Name="recgen" Type="bigint" />
+    <Property Name="recguid" Type="uniqueidentifier" />
+    <Property Name="sentgen" Type="bigint" />
+    <Property Name="sentguid" Type="uniqueidentifier" />
+    <Property Name="schemaversion" Type="int" />
+    <Property Name="schemaguid" Type="uniqueidentifier" />
+    <Property Name="last_validated" Type="datetime" />
+    <Property Name="attempted_validate" Type="datetime" />
+    <Property Name="last_sync_date" Type="datetime" />
+    <Property Name="last_sync_status" Type="int" />
+    <Property Name="last_sync_summary" Type="nvarchar" MaxLength="128" />
+    <Property Name="metadatacleanuptime" Type="datetime" Nullable="false" />
+    <Property Name="partition_id" Type="int" />
+    <Property Name="cleanedup_unsent_changes" Type="bit" Nullable="false" />
+    <Property Name="replica_version" Type="int" Nullable="false" />
+    <Property Name="supportability_mode" Type="int" Nullable="false" />
+    <Property Name="application_name" Type="nvarchar" MaxLength="128" />
+    <Property Name="subscriber_number" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="last_makegeneration_datetime" Type="datetime" />
+    <Property Name="last_local_sentgen" Type="bigint" />
+    <Property Name="last_local_recguid" Type="uniqueidentifier" />
+    <Property Name="last_local_recgen" Type="bigint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_LAZADA.dbo.sysmergesubsetfilters' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="sysmergesubsetfilters">
+    <Key>
+      <PropertyRef Name="filtername" />
+      <PropertyRef Name="join_filterid" />
+      <PropertyRef Name="pubid" />
+      <PropertyRef Name="artid" />
+      <PropertyRef Name="art_nickname" />
+      <PropertyRef Name="join_articlename" />
+      <PropertyRef Name="join_nickname" />
+      <PropertyRef Name="join_unique_key" />
+      <PropertyRef Name="filter_type" />
+    </Key>
+    <Property Name="filtername" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="join_filterid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pubid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="artid" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="art_nickname" Type="int" Nullable="false" />
+    <Property Name="join_articlename" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="join_nickname" Type="int" Nullable="false" />
+    <Property Name="join_unique_key" Type="int" Nullable="false" />
+    <Property Name="expand_proc" Type="nvarchar" MaxLength="128" />
+    <Property Name="join_filterclause" Type="nvarchar" MaxLength="1000" />
+    <Property Name="filter_type" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TK_KHACHHANG">
+    <Key>
+      <PropertyRef Name="MATK_KH" />
+    </Key>
+    <Property Name="MATK_KH" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="TENTK_KH" Type="nvarchar" MaxLength="50" />
+    <Property Name="MK_KH" Type="varchar" MaxLength="50" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TK_NCC">
+    <Key>
+      <PropertyRef Name="MATK_NCC" />
+    </Key>
+    <Property Name="MATK_NCC" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="TENTK_NCC" Type="nvarchar" MaxLength="50" />
+    <Property Name="MK_KH" Type="varchar" MaxLength="50" />
+    <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__MSmerge_d__parti__2739D489">
+    <End Role="MSmerge_partition_groups" Type="Self.MSmerge_partition_groups" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MSmerge_dynamic_snapshots" Type="Self.MSmerge_dynamic_snapshots" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="MSmerge_partition_groups">
+        <PropertyRef Name="partition_id" />
+      </Principal>
+      <Dependent Role="MSmerge_dynamic_snapshots">
+        <PropertyRef Name="partition_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CT_HOADON_HOADON">
+    <End Role="HOADON" Type="Self.HOADON" Multiplicity="1" />
+    <End Role="CT_HOADON" Type="Self.CT_HOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOADON">
+        <PropertyRef Name="MAHD" />
+      </Principal>
+      <Dependent Role="CT_HOADON">
+        <PropertyRef Name="MAHD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CT_HOADON_SANPHAM">
+    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="1" />
+    <End Role="CT_HOADON" Type="Self.CT_HOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANPHAM">
+        <PropertyRef Name="MASP" />
+      </Principal>
+      <Dependent Role="CT_HOADON">
+        <PropertyRef Name="MASP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOADON_KHACHHANG">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
+    <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="MAKH" />
+      </Principal>
+      <Dependent Role="HOADON">
+        <PropertyRef Name="MAKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KHACHHANG_KHUVUC">
+    <End Role="KHUVUC" Type="Self.KHUVUC" Multiplicity="1" />
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHUVUC">
+        <PropertyRef Name="MAKV" />
+      </Principal>
+      <Dependent Role="KHACHHANG">
+        <PropertyRef Name="MAKV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KHACHHANG_TK_KHACHHANG">
+    <End Role="TK_KHACHHANG" Type="Self.TK_KHACHHANG" Multiplicity="1" />
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TK_KHACHHANG">
+        <PropertyRef Name="MATK_KH" />
+      </Principal>
+      <Dependent Role="KHACHHANG">
+        <PropertyRef Name="MATK_KH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NHACUNGCAP_KHUVUC">
+    <End Role="KHUVUC" Type="Self.KHUVUC" Multiplicity="1" />
+    <End Role="NHACUNGCAP" Type="Self.NHACUNGCAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHUVUC">
+        <PropertyRef Name="MAKV" />
+      </Principal>
+      <Dependent Role="NHACUNGCAP">
+        <PropertyRef Name="MAKV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NHACUNGCAP_TK_NCC">
+    <End Role="TK_NCC" Type="Self.TK_NCC" Multiplicity="1" />
+    <End Role="NHACUNGCAP" Type="Self.NHACUNGCAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TK_NCC">
+        <PropertyRef Name="MATK_NCC" />
+      </Principal>
+      <Dependent Role="NHACUNGCAP">
+        <PropertyRef Name="MATK_NCC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SANPHAM_LOAIHANG">
+    <End Role="LOAIHANG" Type="Self.LOAIHANG" Multiplicity="1" />
+    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAIHANG">
+        <PropertyRef Name="MALOAI" />
+      </Principal>
+      <Dependent Role="SANPHAM">
+        <PropertyRef Name="MALOAI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SANPHAM_NHACUNGCAP">
+    <End Role="NHACUNGCAP" Type="Self.NHACUNGCAP" Multiplicity="1" />
+    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHACUNGCAP">
+        <PropertyRef Name="MANCC" />
+      </Principal>
+      <Dependent Role="SANPHAM">
+        <PropertyRef Name="MANCC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QL_LAZADAModel2StoreContainer">
+    <EntitySet Name="ADMIN" EntityType="Self.ADMIN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CT_HOADON" EntityType="Self.CT_HOADON" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HOADON" EntityType="Self.HOADON" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KHUVUC" EntityType="Self.KHUVUC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOAIHANG" EntityType="Self.LOAIHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MSdynamicsnapshotviews" EntityType="Self.MSdynamicsnapshotviews" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MSmerge_dynamic_snapshots" EntityType="Self.MSmerge_dynamic_snapshots" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MSmerge_partition_groups" EntityType="Self.MSmerge_partition_groups" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NHACUNGCAP" EntityType="Self.NHACUNGCAP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SANPHAM" EntityType="Self.SANPHAM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TK_KHACHHANG" EntityType="Self.TK_KHACHHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TK_NCC" EntityType="Self.TK_NCC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MSdynamicsnapshotjobs" EntityType="Self.MSdynamicsnapshotjobs" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MSdynamicsnapshotjobs].[id] AS [id], 
+[MSdynamicsnapshotjobs].[name] AS [name], 
+[MSdynamicsnapshotjobs].[pubid] AS [pubid], 
+[MSdynamicsnapshotjobs].[job_id] AS [job_id], 
+[MSdynamicsnapshotjobs].[agent_id] AS [agent_id], 
+[MSdynamicsnapshotjobs].[dynamic_filter_login] AS [dynamic_filter_login], 
+[MSdynamicsnapshotjobs].[dynamic_filter_hostname] AS [dynamic_filter_hostname], 
+[MSdynamicsnapshotjobs].[dynamic_snapshot_location] AS [dynamic_snapshot_location], 
+[MSdynamicsnapshotjobs].[partition_id] AS [partition_id], 
+[MSdynamicsnapshotjobs].[computed_dynsnap_location] AS [computed_dynsnap_location]
+FROM [dbo].[MSdynamicsnapshotjobs] AS [MSdynamicsnapshotjobs]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSmerge_agent_parameters" EntityType="Self.MSmerge_agent_parameters" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MSmerge_agent_parameters].[profile_name] AS [profile_name], 
+[MSmerge_agent_parameters].[parameter_name] AS [parameter_name], 
+[MSmerge_agent_parameters].[value] AS [value]
+FROM [dbo].[MSmerge_agent_parameters] AS [MSmerge_agent_parameters]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSmerge_altsyncpartners" EntityType="Self.MSmerge_altsyncpartners" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MSmerge_altsyncpartners].[subid] AS [subid], 
+[MSmerge_altsyncpartners].[alternate_subid] AS [alternate_subid], 
+[MSmerge_altsyncpartners].[description] AS [description]
+FROM [dbo].[MSmerge_altsyncpartners] AS [MSmerge_altsyncpartners]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSmerge_articlehistory" EntityType="Self.MSmerge_articlehistory" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MSmerge_articlehistory].[session_id] AS [session_id], 
+[MSmerge_articlehistory].[phase_id] AS [phase_id], 
+[MSmerge_articlehistory].[article_name] AS [article_name], 
+[MSmerge_articlehistory].[start_time] AS [start_time], 
+[MSmerge_articlehistory].[duration] AS [duration], 
+[MSmerge_articlehistory].[inserts] AS [inserts], 
+[MSmerge_articlehistory].[updates] AS [updates], 
+[MSmerge_articlehistory].[deletes] AS [deletes], 
+[MSmerge_articlehistory].[conflicts] AS [conflicts], 
+[MSmerge_articlehistory].[rows_retried] AS [rows_retried], 
+[MSmerge_articlehistory].[percent_complete] AS [percent_complete], 
+[MSmerge_articlehistory].[estimated_changes] AS [estimated_changes], 
+[MSmerge_articlehistory].[relative_cost] AS [relative_cost]
+FROM [dbo].[MSmerge_articlehistory] AS [MSmerge_articlehistory]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSmerge_conflict_MIENBAC_ADMIN" EntityType="Self.MSmerge_conflict_MIENBAC_ADMIN" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MSmerge_conflict_MIENBAC_ADMIN].[MAAD] AS [MAAD], 
+[MSmerge_conflict_MIENBAC_ADMIN].[TENAD] AS [TENAD], 
+[MSmerge_conflict_MIENBAC_ADMIN].[MATKHAU] AS [MATKHAU], 
+[MSmerge_conflict_MIENBAC_ADMIN].[rowguid] AS [rowguid], 
+[MSmerge_conflict_MIENBAC_ADMIN].[origin_datasource_id] AS [origin_datasource_id]
+FROM [dbo].[MSmerge_conflict_MIENBAC_ADMIN] AS [MSmerge_conflict_MIENBAC_ADMIN]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSmerge_conflict_MIENBAC_CT_HOADON" EntityType="Self.MSmerge_conflict_MIENBAC_CT_HOADON" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MSmerge_conflict_MIENBAC_CT_HOADON].[MASP] AS [MASP], 
+[MSmerge_conflict_MIENBAC_CT_HOADON].[MAHD] AS [MAHD], 
+[MSmerge_conflict_MIENBAC_CT_HOADON].[DONGIA] AS [DONGIA], 
+[MSmerge_conflict_MIENBAC_CT_HOADON].[SOLUONG] AS [SOLUONG], 
+[MSmerge_conflict_MIENBAC_CT_HOADON].[THANHTIEN] AS [THANHTIEN], 
+[MSmerge_conflict_MIENBAC_CT_HOADON].[rowguid] AS [rowguid], 
+[MSmerge_conflict_MIENBAC_CT_HOADON].[origin_datasource_id] AS [origin_datasource_id]
+FROM [dbo].[MSmerge_conflict_MIENBAC_CT_HOADON] AS [MSmerge_conflict_MIENBAC_CT_HOADON]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSmerge_conflict_MIENBAC_HOADON" EntityType="Self.MSmerge_conflict_MIENBAC_HOADON" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MSmerge_conflict_MIENBAC_HOADON].[MAHD] AS [MAHD], 
+[MSmerge_conflict_MIENBAC_HOADON].[MAKH] AS [MAKH], 
+[MSmerge_conflict_MIENBAC_HOADON].[THANHTIEN] AS [THANHTIEN], 
+[MSmerge_conflict_MIENBAC_HOADON].[NGAYLAP] AS [NGAYLAP], 
+[MSmerge_conflict_MIENBAC_HOADON].[rowguid] AS [rowguid], 
+[MSmerge_conflict_MIENBAC_HOADON].[origin_datasource_id] AS [origin_datasource_id]
+FROM [dbo].[MSmerge_conflict_MIENBAC_HOADON] AS [MSmerge_conflict_MIENBAC_HOADON]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSmerge_conflict_MIENBAC_KHACHHANG" EntityType="Self.MSmerge_conflict_MIENBAC_KHACHHANG" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MSmerge_conflict_MIENBAC_KHACHHANG].[MAKH] AS [MAKH], 
+[MSmerge_conflict_MIENBAC_KHACHHANG].[MAKV] AS [MAKV], 
+[MSmerge_conflict_MIENBAC_KHACHHANG].[MATK_KH] AS [MATK_KH], 
+[MSmerge_conflict_MIENBAC_KHACHHANG].[TENKH] AS [TENKH], 
+[MSmerge_conflict_MIENBAC_KHACHHANG].[DIACHI] AS [DIACHI], 
+[MSmerge_conflict_MIENBAC_KHACHHANG].[SDT] AS [SDT], 
+[MSmerge_conflict_MIENBAC_KHACHHANG].[EMAIL] AS [EMAIL], 
+[MSmerge_conflict_MIENBAC_KHACHHANG].[rowguid] AS [rowguid], 
+[MSmerge_conflict_MIENBAC_KHACHHANG].[origin_datasource_id] AS [origin_datasource_id]
+FROM [dbo].[MSmerge_conflict_MIENBAC_KHACHHANG] AS [MSmerge_conflict_MIENBAC_KHACHHANG]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSmerge_conflict_MIENBAC_KHUVUC" EntityType="Self.MSmerge_conflict_MIENBAC_KHUVUC" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MSmerge_conflict_MIENBAC_KHUVUC].[MAKV] AS [MAKV], 
+[MSmerge_conflict_MIENBAC_KHUVUC].[TENKV] AS [TENKV], 
+[MSmerge_conflict_MIENBAC_KHUVUC].[rowguid] AS [rowguid], 
+[MSmerge_conflict_MIENBAC_KHUVUC].[origin_datasource_id] AS [origin_datasource_id]
+FROM [dbo].[MSmerge_conflict_MIENBAC_KHUVUC] AS [MSmerge_conflict_MIENBAC_KHUVUC]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSmerge_conflict_MIENBAC_LOAIHANG" EntityType="Self.MSmerge_conflict_MIENBAC_LOAIHANG" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MSmerge_conflict_MIENBAC_LOAIHANG].[MALOAI] AS [MALOAI], 
+[MSmerge_conflict_MIENBAC_LOAIHANG].[TENLOAI] AS [TENLOAI], 
+[MSmerge_conflict_MIENBAC_LOAIHANG].[rowguid] AS [rowguid], 
+[MSmerge_conflict_MIENBAC_LOAIHANG].[origin_datasource_id] AS [origin_datasource_id]
+FROM [dbo].[MSmerge_conflict_MIENBAC_LOAIHANG] AS [MSmerge_conflict_MIENBAC_LOAIHANG]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSmerge_conflict_MIENBAC_NHACUNGCAP" EntityType="Self.MSmerge_conflict_MIENBAC_NHACUNGCAP" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MSmerge_conflict_MIENBAC_NHACUNGCAP].[MANCC] AS [MANCC], 
+[MSmerge_conflict_MIENBAC_NHACUNGCAP].[MAKV] AS [MAKV], 
+[MSmerge_conflict_MIENBAC_NHACUNGCAP].[MATK_NCC] AS [MATK_NCC], 
+[MSmerge_conflict_MIENBAC_NHACUNGCAP].[TENNCC] AS [TENNCC], 
+[MSmerge_conflict_MIENBAC_NHACUNGCAP].[DIACHI] AS [DIACHI], 
+[MSmerge_conflict_MIENBAC_NHACUNGCAP].[SDT] AS [SDT], 
+[MSmerge_conflict_MIENBAC_NHACUNGCAP].[EMAIL] AS [EMAIL], 
+[MSmerge_conflict_MIENBAC_NHACUNGCAP].[rowguid] AS [rowguid], 
+[MSmerge_conflict_MIENBAC_NHACUNGCAP].[origin_datasource_id] AS [origin_datasource_id]
+FROM [dbo].[MSmerge_conflict_MIENBAC_NHACUNGCAP] AS [MSmerge_conflict_MIENBAC_NHACUNGCAP]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSmerge_conflict_MIENBAC_SANPHAM" EntityType="Self.MSmerge_conflict_MIENBAC_SANPHAM" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MSmerge_conflict_MIENBAC_SANPHAM].[MASP] AS [MASP], 
+[MSmerge_conflict_MIENBAC_SANPHAM].[MANCC] AS [MANCC], 
+[MSmerge_conflict_MIENBAC_SANPHAM].[MALOAI] AS [MALOAI], 
+[MSmerge_conflict_MIENBAC_SANPHAM].[TENSP] AS [TENSP], 
+[MSmerge_conflict_MIENBAC_SANPHAM].[DONGIA] AS [DONGIA], 
+[MSmerge_conflict_MIENBAC_SANPHAM].[DVT] AS [DVT], 
+[MSmerge_conflict_MIENBAC_SANPHAM].[SOLUONG] AS [SOLUONG], 
+[MSmerge_conflict_MIENBAC_SANPHAM].[ANH] AS [ANH], 
+[MSmerge_conflict_MIENBAC_SANPHAM].[MOTA] AS [MOTA], 
+[MSmerge_conflict_MIENBAC_SANPHAM].[KICHTHUOC] AS [KICHTHUOC], 
+[MSmerge_conflict_MIENBAC_SANPHAM].[TRONGLUONG] AS [TRONGLUONG], 
+[MSmerge_conflict_MIENBAC_SANPHAM].[MAUSAC] AS [MAUSAC], 
+[MSmerge_conflict_MIENBAC_SANPHAM].[rowguid] AS [rowguid], 
+[MSmerge_conflict_MIENBAC_SANPHAM].[origin_datasource_id] AS [origin_datasource_id]
+FROM [dbo].[MSmerge_conflict_MIENBAC_SANPHAM] AS [MSmerge_conflict_MIENBAC_SANPHAM]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSmerge_conflict_MIENBAC_sysdiagrams" EntityType="Self.MSmerge_conflict_MIENBAC_sysdiagrams" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MSmerge_conflict_MIENBAC_sysdiagrams].[name] AS [name], 
+[MSmerge_conflict_MIENBAC_sysdiagrams].[principal_id] AS [principal_id], 
+[MSmerge_conflict_MIENBAC_sysdiagrams].[diagram_id] AS [diagram_id], 
+[MSmerge_conflict_MIENBAC_sysdiagrams].[version] AS [version], 
+[MSmerge_conflict_MIENBAC_sysdiagrams].[definition] AS [definition], 
+[MSmerge_conflict_MIENBAC_sysdiagrams].[rowguid] AS [rowguid], 
+[MSmerge_conflict_MIENBAC_sysdiagrams].[origin_datasource_id] AS [origin_datasource_id]
+FROM [dbo].[MSmerge_conflict_MIENBAC_sysdiagrams] AS [MSmerge_conflict_MIENBAC_sysdiagrams]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSmerge_conflict_MIENBAC_TK_KHACHHANG" EntityType="Self.MSmerge_conflict_MIENBAC_TK_KHACHHANG" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MSmerge_conflict_MIENBAC_TK_KHACHHANG].[MATK_KH] AS [MATK_KH], 
+[MSmerge_conflict_MIENBAC_TK_KHACHHANG].[TENTK_KH] AS [TENTK_KH], 
+[MSmerge_conflict_MIENBAC_TK_KHACHHANG].[MK_KH] AS [MK_KH], 
+[MSmerge_conflict_MIENBAC_TK_KHACHHANG].[rowguid] AS [rowguid], 
+[MSmerge_conflict_MIENBAC_TK_KHACHHANG].[origin_datasource_id] AS [origin_datasource_id]
+FROM [dbo].[MSmerge_conflict_MIENBAC_TK_KHACHHANG] AS [MSmerge_conflict_MIENBAC_TK_KHACHHANG]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSmerge_conflict_MIENBAC_TK_NCC" EntityType="Self.MSmerge_conflict_MIENBAC_TK_NCC" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MSmerge_conflict_MIENBAC_TK_NCC].[MATK_NCC] AS [MATK_NCC], 
+[MSmerge_conflict_MIENBAC_TK_NCC].[TENTK_NCC] AS [TENTK_NCC], 
+[MSmerge_conflict_MIENBAC_TK_NCC].[MK_KH] AS [MK_KH], 
+[MSmerge_conflict_MIENBAC_TK_NCC].[rowguid] AS [rowguid], 
+[MSmerge_conflict_MIENBAC_TK_NCC].[origin_datasource_id] AS [origin_datasource_id]
+FROM [dbo].[MSmerge_conflict_MIENBAC_TK_NCC] AS [MSmerge_conflict_MIENBAC_TK_NCC]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSmerge_conflicts_info" EntityType="Self.MSmerge_conflicts_info" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MSmerge_conflicts_info].[tablenick] AS [tablenick], 
+[MSmerge_conflicts_info].[rowguid] AS [rowguid], 
+[MSmerge_conflicts_info].[origin_datasource] AS [origin_datasource], 
+[MSmerge_conflicts_info].[conflict_type] AS [conflict_type], 
+[MSmerge_conflicts_info].[reason_code] AS [reason_code], 
+[MSmerge_conflicts_info].[reason_text] AS [reason_text], 
+[MSmerge_conflicts_info].[pubid] AS [pubid], 
+[MSmerge_conflicts_info].[MSrepl_create_time] AS [MSrepl_create_time], 
+[MSmerge_conflicts_info].[origin_datasource_id] AS [origin_datasource_id]
+FROM [dbo].[MSmerge_conflicts_info] AS [MSmerge_conflicts_info]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSmerge_contents" EntityType="Self.MSmerge_contents" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MSmerge_contents].[tablenick] AS [tablenick], 
+[MSmerge_contents].[rowguid] AS [rowguid], 
+[MSmerge_contents].[generation] AS [generation], 
+[MSmerge_contents].[partchangegen] AS [partchangegen], 
+[MSmerge_contents].[lineage] AS [lineage], 
+[MSmerge_contents].[colv1] AS [colv1], 
+[MSmerge_contents].[marker] AS [marker], 
+[MSmerge_contents].[logical_record_parent_rowguid] AS [logical_record_parent_rowguid], 
+[MSmerge_contents].[logical_record_lineage] AS [logical_record_lineage]
+FROM [dbo].[MSmerge_contents] AS [MSmerge_contents]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSmerge_current_partition_mappings" EntityType="Self.MSmerge_current_partition_mappings" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MSmerge_current_partition_mappings].[publication_number] AS [publication_number], 
+[MSmerge_current_partition_mappings].[tablenick] AS [tablenick], 
+[MSmerge_current_partition_mappings].[rowguid] AS [rowguid], 
+[MSmerge_current_partition_mappings].[partition_id] AS [partition_id]
+FROM [dbo].[MSmerge_current_partition_mappings] AS [MSmerge_current_partition_mappings]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSmerge_errorlineage" EntityType="Self.MSmerge_errorlineage" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MSmerge_errorlineage].[tablenick] AS [tablenick], 
+[MSmerge_errorlineage].[rowguid] AS [rowguid], 
+[MSmerge_errorlineage].[lineage] AS [lineage]
+FROM [dbo].[MSmerge_errorlineage] AS [MSmerge_errorlineage]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSmerge_generation_partition_mappings" EntityType="Self.MSmerge_generation_partition_mappings" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MSmerge_generation_partition_mappings].[publication_number] AS [publication_number], 
+[MSmerge_generation_partition_mappings].[generation] AS [generation], 
+[MSmerge_generation_partition_mappings].[partition_id] AS [partition_id], 
+[MSmerge_generation_partition_mappings].[changecount] AS [changecount]
+FROM [dbo].[MSmerge_generation_partition_mappings] AS [MSmerge_generation_partition_mappings]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSmerge_genhistory" EntityType="Self.MSmerge_genhistory" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MSmerge_genhistory].[guidsrc] AS [guidsrc], 
+[MSmerge_genhistory].[pubid] AS [pubid], 
+[MSmerge_genhistory].[generation] AS [generation], 
+[MSmerge_genhistory].[art_nick] AS [art_nick], 
+[MSmerge_genhistory].[nicknames] AS [nicknames], 
+[MSmerge_genhistory].[coldate] AS [coldate], 
+[MSmerge_genhistory].[genstatus] AS [genstatus], 
+[MSmerge_genhistory].[changecount] AS [changecount], 
+[MSmerge_genhistory].[subscriber_number] AS [subscriber_number]
+FROM [dbo].[MSmerge_genhistory] AS [MSmerge_genhistory]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSmerge_history" EntityType="Self.MSmerge_history" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MSmerge_history].[session_id] AS [session_id], 
+[MSmerge_history].[agent_id] AS [agent_id], 
+[MSmerge_history].[comments] AS [comments], 
+[MSmerge_history].[error_id] AS [error_id], 
+[MSmerge_history].[timestamp] AS [timestamp], 
+[MSmerge_history].[updateable_row] AS [updateable_row], 
+[MSmerge_history].[time] AS [time]
+FROM [dbo].[MSmerge_history] AS [MSmerge_history]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSmerge_identity_range" EntityType="Self.MSmerge_identity_range" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MSmerge_identity_range].[subid] AS [subid], 
+[MSmerge_identity_range].[artid] AS [artid], 
+[MSmerge_identity_range].[range_begin] AS [range_begin], 
+[MSmerge_identity_range].[range_end] AS [range_end], 
+[MSmerge_identity_range].[next_range_begin] AS [next_range_begin], 
+[MSmerge_identity_range].[next_range_end] AS [next_range_end], 
+[MSmerge_identity_range].[is_pub_range] AS [is_pub_range], 
+[MSmerge_identity_range].[max_used] AS [max_used]
+FROM [dbo].[MSmerge_identity_range] AS [MSmerge_identity_range]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSmerge_log_files" EntityType="Self.MSmerge_log_files" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MSmerge_log_files].[id] AS [id], 
+[MSmerge_log_files].[pubid] AS [pubid], 
+[MSmerge_log_files].[subid] AS [subid], 
+[MSmerge_log_files].[web_server] AS [web_server], 
+[MSmerge_log_files].[file_name] AS [file_name], 
+[MSmerge_log_files].[upload_time] AS [upload_time], 
+[MSmerge_log_files].[log_file_type] AS [log_file_type], 
+[MSmerge_log_files].[log_file] AS [log_file]
+FROM [dbo].[MSmerge_log_files] AS [MSmerge_log_files]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSmerge_metadataaction_request" EntityType="Self.MSmerge_metadataaction_request" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MSmerge_metadataaction_request].[tablenick] AS [tablenick], 
+[MSmerge_metadataaction_request].[rowguid] AS [rowguid], 
+[MSmerge_metadataaction_request].[action] AS [action], 
+[MSmerge_metadataaction_request].[generation] AS [generation], 
+[MSmerge_metadataaction_request].[changed] AS [changed]
+FROM [dbo].[MSmerge_metadataaction_request] AS [MSmerge_metadataaction_request]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSmerge_past_partition_mappings" EntityType="Self.MSmerge_past_partition_mappings" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MSmerge_past_partition_mappings].[publication_number] AS [publication_number], 
+[MSmerge_past_partition_mappings].[tablenick] AS [tablenick], 
+[MSmerge_past_partition_mappings].[rowguid] AS [rowguid], 
+[MSmerge_past_partition_mappings].[partition_id] AS [partition_id], 
+[MSmerge_past_partition_mappings].[generation] AS [generation], 
+[MSmerge_past_partition_mappings].[reason] AS [reason]
+FROM [dbo].[MSmerge_past_partition_mappings] AS [MSmerge_past_partition_mappings]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSmerge_replinfo" EntityType="Self.MSmerge_replinfo" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MSmerge_replinfo].[repid] AS [repid], 
+[MSmerge_replinfo].[use_interactive_resolver] AS [use_interactive_resolver], 
+[MSmerge_replinfo].[validation_level] AS [validation_level], 
+[MSmerge_replinfo].[resync_gen] AS [resync_gen], 
+[MSmerge_replinfo].[login_name] AS [login_name], 
+[MSmerge_replinfo].[hostname] AS [hostname], 
+[MSmerge_replinfo].[merge_jobid] AS [merge_jobid], 
+[MSmerge_replinfo].[sync_info] AS [sync_info]
+FROM [dbo].[MSmerge_replinfo] AS [MSmerge_replinfo]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSmerge_sessions" EntityType="Self.MSmerge_sessions" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MSmerge_sessions].[subid] AS [subid], 
+[MSmerge_sessions].[session_id] AS [session_id], 
+[MSmerge_sessions].[agent_id] AS [agent_id], 
+[MSmerge_sessions].[start_time] AS [start_time], 
+[MSmerge_sessions].[end_time] AS [end_time], 
+[MSmerge_sessions].[duration] AS [duration], 
+[MSmerge_sessions].[delivery_time] AS [delivery_time], 
+[MSmerge_sessions].[upload_time] AS [upload_time], 
+[MSmerge_sessions].[download_time] AS [download_time], 
+[MSmerge_sessions].[schema_change_time] AS [schema_change_time], 
+[MSmerge_sessions].[prepare_snapshot_time] AS [prepare_snapshot_time], 
+[MSmerge_sessions].[delivery_rate] AS [delivery_rate], 
+[MSmerge_sessions].[time_remaining] AS [time_remaining], 
+[MSmerge_sessions].[percent_complete] AS [percent_complete], 
+[MSmerge_sessions].[upload_inserts] AS [upload_inserts], 
+[MSmerge_sessions].[upload_updates] AS [upload_updates], 
+[MSmerge_sessions].[upload_deletes] AS [upload_deletes], 
+[MSmerge_sessions].[upload_conflicts] AS [upload_conflicts], 
+[MSmerge_sessions].[upload_rows_retried] AS [upload_rows_retried], 
+[MSmerge_sessions].[download_inserts] AS [download_inserts], 
+[MSmerge_sessions].[download_updates] AS [download_updates], 
+[MSmerge_sessions].[download_deletes] AS [download_deletes], 
+[MSmerge_sessions].[download_conflicts] AS [download_conflicts], 
+[MSmerge_sessions].[download_rows_retried] AS [download_rows_retried], 
+[MSmerge_sessions].[schema_changes] AS [schema_changes], 
+[MSmerge_sessions].[bulk_inserts] AS [bulk_inserts], 
+[MSmerge_sessions].[metadata_rows_cleanedup] AS [metadata_rows_cleanedup], 
+[MSmerge_sessions].[runstatus] AS [runstatus], 
+[MSmerge_sessions].[estimated_upload_changes] AS [estimated_upload_changes], 
+[MSmerge_sessions].[estimated_download_changes] AS [estimated_download_changes], 
+[MSmerge_sessions].[connection_type] AS [connection_type], 
+[MSmerge_sessions].[timestamp] AS [timestamp], 
+[MSmerge_sessions].[current_phase_id] AS [current_phase_id], 
+[MSmerge_sessions].[spid] AS [spid], 
+[MSmerge_sessions].[spid_login_time] AS [spid_login_time]
+FROM [dbo].[MSmerge_sessions] AS [MSmerge_sessions]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSmerge_settingshistory" EntityType="Self.MSmerge_settingshistory" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MSmerge_settingshistory].[eventtime] AS [eventtime], 
+[MSmerge_settingshistory].[pubid] AS [pubid], 
+[MSmerge_settingshistory].[artid] AS [artid], 
+[MSmerge_settingshistory].[eventtype] AS [eventtype], 
+[MSmerge_settingshistory].[propertyname] AS [propertyname], 
+[MSmerge_settingshistory].[previousvalue] AS [previousvalue], 
+[MSmerge_settingshistory].[newvalue] AS [newvalue], 
+[MSmerge_settingshistory].[eventtext] AS [eventtext]
+FROM [dbo].[MSmerge_settingshistory] AS [MSmerge_settingshistory]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSmerge_supportability_settings" EntityType="Self.MSmerge_supportability_settings" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MSmerge_supportability_settings].[pubid] AS [pubid], 
+[MSmerge_supportability_settings].[subid] AS [subid], 
+[MSmerge_supportability_settings].[web_server] AS [web_server], 
+[MSmerge_supportability_settings].[support_options] AS [support_options], 
+[MSmerge_supportability_settings].[log_severity] AS [log_severity], 
+[MSmerge_supportability_settings].[log_modules] AS [log_modules], 
+[MSmerge_supportability_settings].[log_file_path] AS [log_file_path], 
+[MSmerge_supportability_settings].[log_file_name] AS [log_file_name], 
+[MSmerge_supportability_settings].[log_file_size] AS [log_file_size], 
+[MSmerge_supportability_settings].[no_of_log_files] AS [no_of_log_files], 
+[MSmerge_supportability_settings].[upload_interval] AS [upload_interval], 
+[MSmerge_supportability_settings].[delete_after_upload] AS [delete_after_upload], 
+[MSmerge_supportability_settings].[custom_script] AS [custom_script], 
+[MSmerge_supportability_settings].[message_pattern] AS [message_pattern], 
+[MSmerge_supportability_settings].[last_log_upload_time] AS [last_log_upload_time], 
+[MSmerge_supportability_settings].[agent_xe] AS [agent_xe], 
+[MSmerge_supportability_settings].[agent_xe_ring_buffer] AS [agent_xe_ring_buffer], 
+[MSmerge_supportability_settings].[sql_xe] AS [sql_xe]
+FROM [dbo].[MSmerge_supportability_settings] AS [MSmerge_supportability_settings]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSmerge_tombstone" EntityType="Self.MSmerge_tombstone" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MSmerge_tombstone].[rowguid] AS [rowguid], 
+[MSmerge_tombstone].[tablenick] AS [tablenick], 
+[MSmerge_tombstone].[type] AS [type], 
+[MSmerge_tombstone].[lineage] AS [lineage], 
+[MSmerge_tombstone].[generation] AS [generation], 
+[MSmerge_tombstone].[logical_record_parent_rowguid] AS [logical_record_parent_rowguid], 
+[MSmerge_tombstone].[logical_record_lineage] AS [logical_record_lineage]
+FROM [dbo].[MSmerge_tombstone] AS [MSmerge_tombstone]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSrepl_errors" EntityType="Self.MSrepl_errors" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MSrepl_errors].[id] AS [id], 
+[MSrepl_errors].[time] AS [time], 
+[MSrepl_errors].[error_type_id] AS [error_type_id], 
+[MSrepl_errors].[source_type_id] AS [source_type_id], 
+[MSrepl_errors].[source_name] AS [source_name], 
+[MSrepl_errors].[error_code] AS [error_code], 
+[MSrepl_errors].[error_text] AS [error_text], 
+[MSrepl_errors].[xact_seqno] AS [xact_seqno], 
+[MSrepl_errors].[command_id] AS [command_id], 
+[MSrepl_errors].[session_id] AS [session_id]
+FROM [dbo].[MSrepl_errors] AS [MSrepl_errors]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MSsnapshotdeliveryprogress" EntityType="Self.MSsnapshotdeliveryprogress" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MSsnapshotdeliveryprogress].[session_token] AS [session_token], 
+[MSsnapshotdeliveryprogress].[progress_token_hash] AS [progress_token_hash], 
+[MSsnapshotdeliveryprogress].[progress_token] AS [progress_token], 
+[MSsnapshotdeliveryprogress].[progress_timestamp] AS [progress_timestamp]
+FROM [dbo].[MSsnapshotdeliveryprogress] AS [MSsnapshotdeliveryprogress]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysmergearticles" EntityType="Self.sysmergearticles" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[sysmergearticles].[name] AS [name], 
+[sysmergearticles].[type] AS [type], 
+[sysmergearticles].[objid] AS [objid], 
+[sysmergearticles].[sync_objid] AS [sync_objid], 
+[sysmergearticles].[view_type] AS [view_type], 
+[sysmergearticles].[artid] AS [artid], 
+[sysmergearticles].[description] AS [description], 
+[sysmergearticles].[pre_creation_command] AS [pre_creation_command], 
+[sysmergearticles].[pubid] AS [pubid], 
+[sysmergearticles].[nickname] AS [nickname], 
+[sysmergearticles].[column_tracking] AS [column_tracking], 
+[sysmergearticles].[status] AS [status], 
+[sysmergearticles].[conflict_table] AS [conflict_table], 
+[sysmergearticles].[creation_script] AS [creation_script], 
+[sysmergearticles].[conflict_script] AS [conflict_script], 
+[sysmergearticles].[article_resolver] AS [article_resolver], 
+[sysmergearticles].[ins_conflict_proc] AS [ins_conflict_proc], 
+[sysmergearticles].[insert_proc] AS [insert_proc], 
+[sysmergearticles].[update_proc] AS [update_proc], 
+[sysmergearticles].[select_proc] AS [select_proc], 
+[sysmergearticles].[metadata_select_proc] AS [metadata_select_proc], 
+[sysmergearticles].[delete_proc] AS [delete_proc], 
+[sysmergearticles].[schema_option] AS [schema_option], 
+[sysmergearticles].[destination_object] AS [destination_object], 
+[sysmergearticles].[destination_owner] AS [destination_owner], 
+[sysmergearticles].[resolver_clsid] AS [resolver_clsid], 
+[sysmergearticles].[subset_filterclause] AS [subset_filterclause], 
+[sysmergearticles].[missing_col_count] AS [missing_col_count], 
+[sysmergearticles].[missing_cols] AS [missing_cols], 
+[sysmergearticles].[excluded_cols] AS [excluded_cols], 
+[sysmergearticles].[excluded_col_count] AS [excluded_col_count], 
+[sysmergearticles].[columns] AS [columns], 
+[sysmergearticles].[deleted_cols] AS [deleted_cols], 
+[sysmergearticles].[resolver_info] AS [resolver_info], 
+[sysmergearticles].[view_sel_proc] AS [view_sel_proc], 
+[sysmergearticles].[gen_cur] AS [gen_cur], 
+[sysmergearticles].[vertical_partition] AS [vertical_partition], 
+[sysmergearticles].[identity_support] AS [identity_support], 
+[sysmergearticles].[before_image_objid] AS [before_image_objid], 
+[sysmergearticles].[before_view_objid] AS [before_view_objid], 
+[sysmergearticles].[verify_resolver_signature] AS [verify_resolver_signature], 
+[sysmergearticles].[allow_interactive_resolver] AS [allow_interactive_resolver], 
+[sysmergearticles].[fast_multicol_updateproc] AS [fast_multicol_updateproc], 
+[sysmergearticles].[check_permissions] AS [check_permissions], 
+[sysmergearticles].[maxversion_at_cleanup] AS [maxversion_at_cleanup], 
+[sysmergearticles].[processing_order] AS [processing_order], 
+[sysmergearticles].[upload_options] AS [upload_options], 
+[sysmergearticles].[published_in_tran_pub] AS [published_in_tran_pub], 
+[sysmergearticles].[lightweight] AS [lightweight], 
+[sysmergearticles].[procname_postfix] AS [procname_postfix], 
+[sysmergearticles].[well_partitioned_lightweight] AS [well_partitioned_lightweight], 
+[sysmergearticles].[before_upd_view_objid] AS [before_upd_view_objid], 
+[sysmergearticles].[delete_tracking] AS [delete_tracking], 
+[sysmergearticles].[compensate_for_errors] AS [compensate_for_errors], 
+[sysmergearticles].[pub_range] AS [pub_range], 
+[sysmergearticles].[range] AS [range], 
+[sysmergearticles].[threshold] AS [threshold], 
+[sysmergearticles].[stream_blob_columns] AS [stream_blob_columns], 
+[sysmergearticles].[preserve_rowguidcol] AS [preserve_rowguidcol]
+FROM [dbo].[sysmergearticles] AS [sysmergearticles]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysmergepartitioninfo" EntityType="Self.sysmergepartitioninfo" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[sysmergepartitioninfo].[artid] AS [artid], 
+[sysmergepartitioninfo].[pubid] AS [pubid], 
+[sysmergepartitioninfo].[partition_view_id] AS [partition_view_id], 
+[sysmergepartitioninfo].[repl_view_id] AS [repl_view_id], 
+[sysmergepartitioninfo].[partition_deleted_view_rule] AS [partition_deleted_view_rule], 
+[sysmergepartitioninfo].[partition_inserted_view_rule] AS [partition_inserted_view_rule], 
+[sysmergepartitioninfo].[membership_eval_proc_name] AS [membership_eval_proc_name], 
+[sysmergepartitioninfo].[column_list] AS [column_list], 
+[sysmergepartitioninfo].[column_list_blob] AS [column_list_blob], 
+[sysmergepartitioninfo].[expand_proc] AS [expand_proc], 
+[sysmergepartitioninfo].[logical_record_parent_nickname] AS [logical_record_parent_nickname], 
+[sysmergepartitioninfo].[logical_record_view] AS [logical_record_view], 
+[sysmergepartitioninfo].[logical_record_deleted_view_rule] AS [logical_record_deleted_view_rule], 
+[sysmergepartitioninfo].[logical_record_level_conflict_detection] AS [logical_record_level_conflict_detection], 
+[sysmergepartitioninfo].[logical_record_level_conflict_resolution] AS [logical_record_level_conflict_resolution], 
+[sysmergepartitioninfo].[partition_options] AS [partition_options]
+FROM [dbo].[sysmergepartitioninfo] AS [sysmergepartitioninfo]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysmergepublications" EntityType="Self.sysmergepublications" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[sysmergepublications].[publisher] AS [publisher], 
+[sysmergepublications].[publisher_db] AS [publisher_db], 
+[sysmergepublications].[name] AS [name], 
+[sysmergepublications].[description] AS [description], 
+[sysmergepublications].[retention] AS [retention], 
+[sysmergepublications].[publication_type] AS [publication_type], 
+[sysmergepublications].[pubid] AS [pubid], 
+[sysmergepublications].[designmasterid] AS [designmasterid], 
+[sysmergepublications].[parentid] AS [parentid], 
+[sysmergepublications].[sync_mode] AS [sync_mode], 
+[sysmergepublications].[allow_push] AS [allow_push], 
+[sysmergepublications].[allow_pull] AS [allow_pull], 
+[sysmergepublications].[allow_anonymous] AS [allow_anonymous], 
+[sysmergepublications].[centralized_conflicts] AS [centralized_conflicts], 
+[sysmergepublications].[status] AS [status], 
+[sysmergepublications].[snapshot_ready] AS [snapshot_ready], 
+[sysmergepublications].[enabled_for_internet] AS [enabled_for_internet], 
+[sysmergepublications].[dynamic_filters] AS [dynamic_filters], 
+[sysmergepublications].[snapshot_in_defaultfolder] AS [snapshot_in_defaultfolder], 
+[sysmergepublications].[alt_snapshot_folder] AS [alt_snapshot_folder], 
+[sysmergepublications].[pre_snapshot_script] AS [pre_snapshot_script], 
+[sysmergepublications].[post_snapshot_script] AS [post_snapshot_script], 
+[sysmergepublications].[compress_snapshot] AS [compress_snapshot], 
+[sysmergepublications].[ftp_address] AS [ftp_address], 
+[sysmergepublications].[ftp_port] AS [ftp_port], 
+[sysmergepublications].[ftp_subdirectory] AS [ftp_subdirectory], 
+[sysmergepublications].[ftp_login] AS [ftp_login], 
+[sysmergepublications].[ftp_password] AS [ftp_password], 
+[sysmergepublications].[conflict_retention] AS [conflict_retention], 
+[sysmergepublications].[keep_before_values] AS [keep_before_values], 
+[sysmergepublications].[allow_subscription_copy] AS [allow_subscription_copy], 
+[sysmergepublications].[allow_synctoalternate] AS [allow_synctoalternate], 
+[sysmergepublications].[validate_subscriber_info] AS [validate_subscriber_info], 
+[sysmergepublications].[ad_guidname] AS [ad_guidname], 
+[sysmergepublications].[backward_comp_level] AS [backward_comp_level], 
+[sysmergepublications].[max_concurrent_merge] AS [max_concurrent_merge], 
+[sysmergepublications].[max_concurrent_dynamic_snapshots] AS [max_concurrent_dynamic_snapshots], 
+[sysmergepublications].[use_partition_groups] AS [use_partition_groups], 
+[sysmergepublications].[dynamic_filters_function_list] AS [dynamic_filters_function_list], 
+[sysmergepublications].[partition_id_eval_proc] AS [partition_id_eval_proc], 
+[sysmergepublications].[publication_number] AS [publication_number], 
+[sysmergepublications].[replicate_ddl] AS [replicate_ddl], 
+[sysmergepublications].[allow_subscriber_initiated_snapshot] AS [allow_subscriber_initiated_snapshot], 
+[sysmergepublications].[distributor] AS [distributor], 
+[sysmergepublications].[snapshot_jobid] AS [snapshot_jobid], 
+[sysmergepublications].[allow_web_synchronization] AS [allow_web_synchronization], 
+[sysmergepublications].[web_synchronization_url] AS [web_synchronization_url], 
+[sysmergepublications].[allow_partition_realignment] AS [allow_partition_realignment], 
+[sysmergepublications].[retention_period_unit] AS [retention_period_unit], 
+[sysmergepublications].[decentralized_conflicts] AS [decentralized_conflicts], 
+[sysmergepublications].[generation_leveling_threshold] AS [generation_leveling_threshold], 
+[sysmergepublications].[automatic_reinitialization_policy] AS [automatic_reinitialization_policy]
+FROM [dbo].[sysmergepublications] AS [sysmergepublications]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysmergeschemaarticles" EntityType="Self.sysmergeschemaarticles" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[sysmergeschemaarticles].[name] AS [name], 
+[sysmergeschemaarticles].[type] AS [type], 
+[sysmergeschemaarticles].[objid] AS [objid], 
+[sysmergeschemaarticles].[artid] AS [artid], 
+[sysmergeschemaarticles].[description] AS [description], 
+[sysmergeschemaarticles].[pre_creation_command] AS [pre_creation_command], 
+[sysmergeschemaarticles].[pubid] AS [pubid], 
+[sysmergeschemaarticles].[status] AS [status], 
+[sysmergeschemaarticles].[creation_script] AS [creation_script], 
+[sysmergeschemaarticles].[schema_option] AS [schema_option], 
+[sysmergeschemaarticles].[destination_object] AS [destination_object], 
+[sysmergeschemaarticles].[destination_owner] AS [destination_owner], 
+[sysmergeschemaarticles].[processing_order] AS [processing_order]
+FROM [dbo].[sysmergeschemaarticles] AS [sysmergeschemaarticles]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysmergeschemachange" EntityType="Self.sysmergeschemachange" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[sysmergeschemachange].[pubid] AS [pubid], 
+[sysmergeschemachange].[artid] AS [artid], 
+[sysmergeschemachange].[schemaversion] AS [schemaversion], 
+[sysmergeschemachange].[schemaguid] AS [schemaguid], 
+[sysmergeschemachange].[schematype] AS [schematype], 
+[sysmergeschemachange].[schematext] AS [schematext], 
+[sysmergeschemachange].[schemastatus] AS [schemastatus], 
+[sysmergeschemachange].[schemasubtype] AS [schemasubtype]
+FROM [dbo].[sysmergeschemachange] AS [sysmergeschemachange]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysmergesubscriptions" EntityType="Self.sysmergesubscriptions" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[sysmergesubscriptions].[subscriber_server] AS [subscriber_server], 
+[sysmergesubscriptions].[db_name] AS [db_name], 
+[sysmergesubscriptions].[pubid] AS [pubid], 
+[sysmergesubscriptions].[datasource_type] AS [datasource_type], 
+[sysmergesubscriptions].[subid] AS [subid], 
+[sysmergesubscriptions].[replnickname] AS [replnickname], 
+[sysmergesubscriptions].[replicastate] AS [replicastate], 
+[sysmergesubscriptions].[status] AS [status], 
+[sysmergesubscriptions].[subscriber_type] AS [subscriber_type], 
+[sysmergesubscriptions].[subscription_type] AS [subscription_type], 
+[sysmergesubscriptions].[sync_type] AS [sync_type], 
+[sysmergesubscriptions].[description] AS [description], 
+[sysmergesubscriptions].[priority] AS [priority], 
+[sysmergesubscriptions].[recgen] AS [recgen], 
+[sysmergesubscriptions].[recguid] AS [recguid], 
+[sysmergesubscriptions].[sentgen] AS [sentgen], 
+[sysmergesubscriptions].[sentguid] AS [sentguid], 
+[sysmergesubscriptions].[schemaversion] AS [schemaversion], 
+[sysmergesubscriptions].[schemaguid] AS [schemaguid], 
+[sysmergesubscriptions].[last_validated] AS [last_validated], 
+[sysmergesubscriptions].[attempted_validate] AS [attempted_validate], 
+[sysmergesubscriptions].[last_sync_date] AS [last_sync_date], 
+[sysmergesubscriptions].[last_sync_status] AS [last_sync_status], 
+[sysmergesubscriptions].[last_sync_summary] AS [last_sync_summary], 
+[sysmergesubscriptions].[metadatacleanuptime] AS [metadatacleanuptime], 
+[sysmergesubscriptions].[partition_id] AS [partition_id], 
+[sysmergesubscriptions].[cleanedup_unsent_changes] AS [cleanedup_unsent_changes], 
+[sysmergesubscriptions].[replica_version] AS [replica_version], 
+[sysmergesubscriptions].[supportability_mode] AS [supportability_mode], 
+[sysmergesubscriptions].[application_name] AS [application_name], 
+[sysmergesubscriptions].[subscriber_number] AS [subscriber_number], 
+[sysmergesubscriptions].[last_makegeneration_datetime] AS [last_makegeneration_datetime], 
+[sysmergesubscriptions].[last_local_sentgen] AS [last_local_sentgen], 
+[sysmergesubscriptions].[last_local_recguid] AS [last_local_recguid], 
+[sysmergesubscriptions].[last_local_recgen] AS [last_local_recgen]
+FROM [dbo].[sysmergesubscriptions] AS [sysmergesubscriptions]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysmergesubsetfilters" EntityType="Self.sysmergesubsetfilters" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[sysmergesubsetfilters].[filtername] AS [filtername], 
+[sysmergesubsetfilters].[join_filterid] AS [join_filterid], 
+[sysmergesubsetfilters].[pubid] AS [pubid], 
+[sysmergesubsetfilters].[artid] AS [artid], 
+[sysmergesubsetfilters].[art_nickname] AS [art_nickname], 
+[sysmergesubsetfilters].[join_articlename] AS [join_articlename], 
+[sysmergesubsetfilters].[join_nickname] AS [join_nickname], 
+[sysmergesubsetfilters].[join_unique_key] AS [join_unique_key], 
+[sysmergesubsetfilters].[expand_proc] AS [expand_proc], 
+[sysmergesubsetfilters].[join_filterclause] AS [join_filterclause], 
+[sysmergesubsetfilters].[filter_type] AS [filter_type]
+FROM [dbo].[sysmergesubsetfilters] AS [sysmergesubsetfilters]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__MSmerge_d__parti__2739D489" Association="Self.FK__MSmerge_d__parti__2739D489">
+      <End Role="MSmerge_partition_groups" EntitySet="MSmerge_partition_groups" />
+      <End Role="MSmerge_dynamic_snapshots" EntitySet="MSmerge_dynamic_snapshots" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CT_HOADON_HOADON" Association="Self.FK_CT_HOADON_HOADON">
+      <End Role="HOADON" EntitySet="HOADON" />
+      <End Role="CT_HOADON" EntitySet="CT_HOADON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CT_HOADON_SANPHAM" Association="Self.FK_CT_HOADON_SANPHAM">
+      <End Role="SANPHAM" EntitySet="SANPHAM" />
+      <End Role="CT_HOADON" EntitySet="CT_HOADON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOADON_KHACHHANG" Association="Self.FK_HOADON_KHACHHANG">
+      <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+      <End Role="HOADON" EntitySet="HOADON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KHACHHANG_KHUVUC" Association="Self.FK_KHACHHANG_KHUVUC">
+      <End Role="KHUVUC" EntitySet="KHUVUC" />
+      <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KHACHHANG_TK_KHACHHANG" Association="Self.FK_KHACHHANG_TK_KHACHHANG">
+      <End Role="TK_KHACHHANG" EntitySet="TK_KHACHHANG" />
+      <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NHACUNGCAP_KHUVUC" Association="Self.FK_NHACUNGCAP_KHUVUC">
+      <End Role="KHUVUC" EntitySet="KHUVUC" />
+      <End Role="NHACUNGCAP" EntitySet="NHACUNGCAP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NHACUNGCAP_TK_NCC" Association="Self.FK_NHACUNGCAP_TK_NCC">
+      <End Role="TK_NCC" EntitySet="TK_NCC" />
+      <End Role="NHACUNGCAP" EntitySet="NHACUNGCAP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SANPHAM_LOAIHANG" Association="Self.FK_SANPHAM_LOAIHANG">
+      <End Role="LOAIHANG" EntitySet="LOAIHANG" />
+      <End Role="SANPHAM" EntitySet="SANPHAM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SANPHAM_NHACUNGCAP" Association="Self.FK_SANPHAM_NHACUNGCAP">
+      <End Role="NHACUNGCAP" EntitySet="NHACUNGCAP" />
+      <End Role="SANPHAM" EntitySet="SANPHAM" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

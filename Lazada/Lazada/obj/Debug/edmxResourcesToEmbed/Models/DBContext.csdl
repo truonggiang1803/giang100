@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QL_LAZADAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CT_HOADON">
+    <Key>
+      <PropertyRef Name="MASP" />
+      <PropertyRef Name="MAHD" />
+    </Key>
+    <Property Name="MASP" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MAHD" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="DONGIA" Type="Int32" />
+    <Property Name="SOLUONG" Type="Int32" />
+    <Property Name="THANHTIEN" Type="Int32" />
+    <NavigationProperty Name="HOADON" Relationship="Self.FK_CT_HOADON_HOADON" FromRole="CT_HOADON" ToRole="HOADON" />
+    <NavigationProperty Name="SANPHAM" Relationship="Self.FK_CT_HOADON_SANPHAM" FromRole="CT_HOADON" ToRole="SANPHAM" />
+  </EntityType>
+  <EntityType Name="HOADON">
+    <Key>
+      <PropertyRef Name="MAHD" />
+    </Key>
+    <Property Name="MAHD" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MANCC" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MAKH" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="THANHTIEN" Type="Int32" />
+    <Property Name="NGAYLAP" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="CT_HOADON" Relationship="Self.FK_CT_HOADON_HOADON" FromRole="HOADON" ToRole="CT_HOADON" />
+    <NavigationProperty Name="KHACHHANG" Relationship="Self.FK_HOADON_KHACHHANG" FromRole="HOADON" ToRole="KHACHHANG" />
+  </EntityType>
+  <EntityType Name="KHACHHANG">
+    <Key>
+      <PropertyRef Name="MAKH" />
+    </Key>
+    <Property Name="MAKH" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MAKV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MATK_KH" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TENKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DIACHI" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="HOADONs" Relationship="Self.FK_HOADON_KHACHHANG" FromRole="KHACHHANG" ToRole="HOADON" />
+    <NavigationProperty Name="KHUVUC" Relationship="Self.FK_KHACHHANG_KHUVUC" FromRole="KHACHHANG" ToRole="KHUVUC" />
+    <NavigationProperty Name="TK_KHACHHANG" Relationship="Self.FK_KHACHHANG_TK_KHACHHANG" FromRole="KHACHHANG" ToRole="TK_KHACHHANG" />
+  </EntityType>
+  <EntityType Name="KHUVUC">
+    <Key>
+      <PropertyRef Name="MAKV" />
+    </Key>
+    <Property Name="MAKV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TENKV" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="KHACHHANGs" Relationship="Self.FK_KHACHHANG_KHUVUC" FromRole="KHUVUC" ToRole="KHACHHANG" />
+    <NavigationProperty Name="NHACUNGCAPs" Relationship="Self.FK_NHACUNGCAP_KHUVUC" FromRole="KHUVUC" ToRole="NHACUNGCAP" />
+  </EntityType>
+  <EntityType Name="LOAIHANG">
+    <Key>
+      <PropertyRef Name="MALOAI" />
+    </Key>
+    <Property Name="MALOAI" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TENLOAI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SANPHAMs" Relationship="Self.FK_SANPHAM_LOAIHANG" FromRole="LOAIHANG" ToRole="SANPHAM" />
+  </EntityType>
+  <EntityType Name="NHACUNGCAP">
+    <Key>
+      <PropertyRef Name="MANCC" />
+    </Key>
+    <Property Name="MANCC" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MAKV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MATK_NCC" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TENNCC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DIACHI" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="KHUVUC" Relationship="Self.FK_NHACUNGCAP_KHUVUC" FromRole="NHACUNGCAP" ToRole="KHUVUC" />
+    <NavigationProperty Name="TK_NCC" Relationship="Self.FK_NHACUNGCAP_TK_NCC" FromRole="NHACUNGCAP" ToRole="TK_NCC" />
+    <NavigationProperty Name="SANPHAMs" Relationship="Self.FK_SANPHAM_NHACUNGCAP" FromRole="NHACUNGCAP" ToRole="SANPHAM" />
+  </EntityType>
+  <EntityType Name="SANPHAM">
+    <Key>
+      <PropertyRef Name="MASP" />
+    </Key>
+    <Property Name="MASP" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MANCC" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MALOAI" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TENSP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DONGIA" Type="Int32" />
+    <Property Name="DVT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SOLUONG" Type="Int32" />
+    <Property Name="ANH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="KICHTHUOC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TRONGLUONG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MAUSAC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CT_HOADON" Relationship="Self.FK_CT_HOADON_SANPHAM" FromRole="SANPHAM" ToRole="CT_HOADON" />
+    <NavigationProperty Name="LOAIHANG" Relationship="Self.FK_SANPHAM_LOAIHANG" FromRole="SANPHAM" ToRole="LOAIHANG" />
+    <NavigationProperty Name="NHACUNGCAP" Relationship="Self.FK_SANPHAM_NHACUNGCAP" FromRole="SANPHAM" ToRole="NHACUNGCAP" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TK_KHACHHANG">
+    <Key>
+      <PropertyRef Name="MATK_KH" />
+    </Key>
+    <Property Name="MATK_KH" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TENTK_KH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MK_KH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="KHACHHANGs" Relationship="Self.FK_KHACHHANG_TK_KHACHHANG" FromRole="TK_KHACHHANG" ToRole="KHACHHANG" />
+  </EntityType>
+  <EntityType Name="TK_NCC">
+    <Key>
+      <PropertyRef Name="MATK_NCC" />
+    </Key>
+    <Property Name="MATK_NCC" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TENTK_NCC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MK_KH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="NHACUNGCAPs" Relationship="Self.FK_NHACUNGCAP_TK_NCC" FromRole="TK_NCC" ToRole="NHACUNGCAP" />
+  </EntityType>
+  <Association Name="FK_CT_HOADON_HOADON">
+    <End Role="HOADON" Type="Self.HOADON" Multiplicity="1" />
+    <End Role="CT_HOADON" Type="Self.CT_HOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOADON">
+        <PropertyRef Name="MAHD" />
+      </Principal>
+      <Dependent Role="CT_HOADON">
+        <PropertyRef Name="MAHD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CT_HOADON_SANPHAM">
+    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="1" />
+    <End Role="CT_HOADON" Type="Self.CT_HOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANPHAM">
+        <PropertyRef Name="MASP" />
+      </Principal>
+      <Dependent Role="CT_HOADON">
+        <PropertyRef Name="MASP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HOADON_KHACHHANG">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
+    <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="MAKH" />
+      </Principal>
+      <Dependent Role="HOADON">
+        <PropertyRef Name="MAKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KHACHHANG_KHUVUC">
+    <End Role="KHUVUC" Type="Self.KHUVUC" Multiplicity="1" />
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHUVUC">
+        <PropertyRef Name="MAKV" />
+      </Principal>
+      <Dependent Role="KHACHHANG">
+        <PropertyRef Name="MAKV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KHACHHANG_TK_KHACHHANG">
+    <End Role="TK_KHACHHANG" Type="Self.TK_KHACHHANG" Multiplicity="1" />
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TK_KHACHHANG">
+        <PropertyRef Name="MATK_KH" />
+      </Principal>
+      <Dependent Role="KHACHHANG">
+        <PropertyRef Name="MATK_KH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NHACUNGCAP_KHUVUC">
+    <End Role="KHUVUC" Type="Self.KHUVUC" Multiplicity="1" />
+    <End Role="NHACUNGCAP" Type="Self.NHACUNGCAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHUVUC">
+        <PropertyRef Name="MAKV" />
+      </Principal>
+      <Dependent Role="NHACUNGCAP">
+        <PropertyRef Name="MAKV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SANPHAM_LOAIHANG">
+    <End Role="LOAIHANG" Type="Self.LOAIHANG" Multiplicity="1" />
+    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAIHANG">
+        <PropertyRef Name="MALOAI" />
+      </Principal>
+      <Dependent Role="SANPHAM">
+        <PropertyRef Name="MALOAI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NHACUNGCAP_TK_NCC">
+    <End Role="TK_NCC" Type="Self.TK_NCC" Multiplicity="1" />
+    <End Role="NHACUNGCAP" Type="Self.NHACUNGCAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TK_NCC">
+        <PropertyRef Name="MATK_NCC" />
+      </Principal>
+      <Dependent Role="NHACUNGCAP">
+        <PropertyRef Name="MATK_NCC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SANPHAM_NHACUNGCAP">
+    <End Role="NHACUNGCAP" Type="Self.NHACUNGCAP" Multiplicity="1" />
+    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHACUNGCAP">
+        <PropertyRef Name="MANCC" />
+      </Principal>
+      <Dependent Role="SANPHAM">
+        <PropertyRef Name="MANCC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QL_LAZADAEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CT_HOADON" EntityType="Self.CT_HOADON" />
+    <EntitySet Name="HOADONs" EntityType="Self.HOADON" />
+    <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
+    <EntitySet Name="KHUVUCs" EntityType="Self.KHUVUC" />
+    <EntitySet Name="LOAIHANGs" EntityType="Self.LOAIHANG" />
+    <EntitySet Name="NHACUNGCAPs" EntityType="Self.NHACUNGCAP" />
+    <EntitySet Name="SANPHAMs" EntityType="Self.SANPHAM" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="TK_KHACHHANG" EntityType="Self.TK_KHACHHANG" />
+    <EntitySet Name="TK_NCC" EntityType="Self.TK_NCC" />
+    <AssociationSet Name="FK_CT_HOADON_HOADON" Association="Self.FK_CT_HOADON_HOADON">
+      <End Role="HOADON" EntitySet="HOADONs" />
+      <End Role="CT_HOADON" EntitySet="CT_HOADON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CT_HOADON_SANPHAM" Association="Self.FK_CT_HOADON_SANPHAM">
+      <End Role="SANPHAM" EntitySet="SANPHAMs" />
+      <End Role="CT_HOADON" EntitySet="CT_HOADON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HOADON_KHACHHANG" Association="Self.FK_HOADON_KHACHHANG">
+      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+      <End Role="HOADON" EntitySet="HOADONs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KHACHHANG_KHUVUC" Association="Self.FK_KHACHHANG_KHUVUC">
+      <End Role="KHUVUC" EntitySet="KHUVUCs" />
+      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KHACHHANG_TK_KHACHHANG" Association="Self.FK_KHACHHANG_TK_KHACHHANG">
+      <End Role="TK_KHACHHANG" EntitySet="TK_KHACHHANG" />
+      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NHACUNGCAP_KHUVUC" Association="Self.FK_NHACUNGCAP_KHUVUC">
+      <End Role="KHUVUC" EntitySet="KHUVUCs" />
+      <End Role="NHACUNGCAP" EntitySet="NHACUNGCAPs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SANPHAM_LOAIHANG" Association="Self.FK_SANPHAM_LOAIHANG">
+      <End Role="LOAIHANG" EntitySet="LOAIHANGs" />
+      <End Role="SANPHAM" EntitySet="SANPHAMs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NHACUNGCAP_TK_NCC" Association="Self.FK_NHACUNGCAP_TK_NCC">
+      <End Role="TK_NCC" EntitySet="TK_NCC" />
+      <End Role="NHACUNGCAP" EntitySet="NHACUNGCAPs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SANPHAM_NHACUNGCAP" Association="Self.FK_SANPHAM_NHACUNGCAP">
+      <End Role="NHACUNGCAP" EntitySet="NHACUNGCAPs" />
+      <End Role="SANPHAM" EntitySet="SANPHAMs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
